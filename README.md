@@ -1,77 +1,52 @@
-# Anti Huamn Trafficking Decision Support Toolkit (AHTDST)
+# Reusable AI-Driven Decision-Intelligence Framework
 
-TDST is a **plug-and-play, privacy-aware, data-driven decision-support toolkit** designed to help anti-human-trafficking stakeholders (e.g., NGOs, social service partners, and public agencies) **prioritize outreach, triage leads, optimize resource allocation, and coordinate response workflows** using configurable data pipelines, **AI/ML-ready risk scoring**, and interactive dashboards.
+A modular, AI-driven framework for turning large, noisy, and fragmented data into explainable, decision-ready recommendations for high-stakes operational settings.
 
-This toolkit is built and maintained from the perspective of a **data scientist with domain knowledge in anti-trafficking analytics**, with an emphasis on **replicability, explainability, and responsible use**.
-
-> **Important note:** This repository is designed to be **replicable across organizations and jurisdictions**. It includes **only synthetic/demo data** and provides guidance for secure integration with an organization’s own data systems. **Do not upload or run this project using real case data without appropriate legal authority, privacy controls, and partner approvals.**
+This repository is organized around one core idea: many organizations have data and analytics, but still struggle to convert them into timely, defensible, and operationally useful decisions. This framework is designed to help close that gap by combining scalable AI modeling, prioritization logic, explainability tools, and reusable deployment patterns in one shared system architecture.
 
 ---
 
-## Why this project exists
+## Overview
 
-Human trafficking response work often involves:
-- fragmented data sources and inconsistent schemas,
-- limited analytic capacity at frontline organizations,
-- high-volume leads that require careful prioritization,
-- the need for secure, auditable, and explainable decision support.
+This project provides a reusable **AI-driven decision-intelligence framework** for high-stakes resource allocation and operational decision-making under uncertainty.
 
-TDST aims to reduce adoption barriers by providing a reusable foundation for **data-driven and AI-enabled decision support**, including:
-- a **configurable pipeline** that can run with minimal engineering effort,
-- **transparent scoring** (baseline analytics today, ML-ready interfaces for expansion),
-- **evaluation components** aligned to real-world triage,
-- a **standardized data schema** and validation utilities,
-- Interactive **dashboards and reporting** modules for direct display and operational use.
+The framework is built around:
+
+- **AI and data-science models** that process structured and unstructured data
+- **Decision and prioritization logic** that translates analytical outputs into actionable recommendations
+- **Explainability tools and interactive dashboards** that make outputs interpretable and operationally usable
+- **Reusable deployment patterns** that allow the same core framework to be adapted to different real-world settings with limited customization
+
+Rather than stopping at prediction, this framework is designed to support **action**.
 
 ---
 
-## What TDST provides (current / planned)
+## Why this repository exists
 
-### Core capabilities
-- **Data ingestion & validation**: load partner data (CSV now; database connectors planned) and validate against a standard schema
-- **Feature engineering**: modular, documented transformations to support consistent modeling across partners
-- **Risk / priority scoring**:
-  - baseline scoring strategies for immediate triage support
-  - ML-ready model interfaces (e.g., logistic regression / tree-based models) for partner-specific training and evaluation
-- **Evaluation framework**: metrics and review workflows appropriate for operational decision support (not just offline accuracy)
-- **Reporting & export**: generate prioritized review outputs with explainability summaries where applicable
+Across public-sector, nonprofit, and large-scale operational environments, three recurring problems appear again and again:
 
-### Optional modules (as the project expands)
-- **Dashboard** for triage queue management, monitoring trends, and model/explainability summaries
-- **API service** for integration into partner systems and case management workflows
-- **Deployment templates** (Docker-first) for scalable rollout
-- **AI ChatBot** for easier results retriving and better streaming
+1. **Massive data, limited scalable insight extraction**  
+   Organizations often hold large volumes of data, but still lack efficient ways to extract decision-relevant signals at scale.
+
+2. **Insights without action**  
+   Existing analytics often produce forecasts, scores, or dashboards, but do not translate them into prioritized, decision-ready recommendations.
+
+3. **High barriers to adopting advanced AI**  
+   Many organizations, especially resource-constrained ones, do not have the time, staff, or infrastructure to build operational AI systems from scratch.
+
+This repository is intended to provide a practical, reusable foundation for addressing those challenges.
 
 ---
 
-## Who it’s for
-TDST is intended for:
-- NGOs and service providers supporting victims and survivors,
-- partner agencies coordinating response efforts,
-- teams seeking a reusable **data/AI foundation** without building everything from scratch.
+## Repository structure
 
-This toolkit is **not** a substitute for professional judgment. It is meant to **support** decision-making with transparent, auditable signals.
+```text
+.
+├── standardized-ai-core/
+├── track-a/
+├── track-b/
+└── utilities/
 
----
-
-## Design principles
-TDST is designed around:
-- **Replicability**: standardized schema + configuration-driven setup across jurisdictions
-- **Privacy & safety**: strong default guidance to reduce risk when working with sensitive data
-- **Explainability**: outputs should be interpretable, reviewable, and auditable
-- **Operational realism**: focuses on triage and workflow integration, not just model performance
-- **Responsible AI**: emphasizes evaluation, monitoring, and human-in-the-loop review
-
----
-
-## Quick start (placeholder)
-This repository is under active development. A full quickstart guide will be provided in `docs/03_quickstart.md`.
-
-Intended flow:
-1. Configure data sources and outputs in a YAML config file (examples in `configs/`)
-2. Run the pipeline to generate **data-driven / ML-ready** prioritized review outputs
-3. Review evaluation metrics and calibrate thresholds for operational use
-4. (Optional) Launch a dashboard for case triage and monitoring
 
 ---
 
