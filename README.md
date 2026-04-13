@@ -42,24 +42,20 @@ This repository is intended to provide a practical, reusable foundation for addr
 
 ```text
 .
-├── standardized-ai-core/
-├── track-a/
-├── track-b/
-└── utilities/
-.
+├── standardized_AI_core/
+├── Track_A_Public_Safety_Decision_Intelligence/
+└── Track_B_Supply_Chain_Decision_Intelligence/
 ```
 
 ---
 
 ## Data and security disclaimer
-- This repo ships with **synthetic demo data only**.
-- If you adapt TDST for operational use, you are responsible for:
+- This repo is currently a **framework-first repository** focused on reusable architecture and early shared modules.
+- If you adapt it for operational use, you are responsible for:
   - privacy and data governance (PII handling, access controls, auditing),
   - legal compliance and approvals,
   - safe deployment practices and stakeholder training,
   - responsible model evaluation and monitoring.
-
-See `docs/07_privacy_ethics.md` for recommended controls.
 
 ---
 
