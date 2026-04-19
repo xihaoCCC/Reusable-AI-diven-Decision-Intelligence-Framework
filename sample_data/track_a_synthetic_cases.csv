@@ -1,0 +1,201 @@
+case_id,incident_text,notes,age,prior_contacts,has_missing_history,location_risk_score,household_instability_score,gender,race_ethnicity,housing_status,employment_status,school_enrollment_status,is_victim
+A-1001,General welfare check with routine family support needs,Follow up completed by partner team,13,0,1,0.06,0.04,female,asian,stable,student,enrolled,0
+A-1002,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,14,0,0,0.101,0.075,male,black,family_home,employed,not_enrolled,0
+A-1003,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,15,1,0,0.142,0.11,nonbinary,hispanic,temporary,unemployed,unknown,0
+A-1004,Transportation assistance request after missed bus connection,Individual declined additional services,16,1,0,0.183,0.145,female,white,unstable,unknown,enrolled,0
+A-1005,Retail trespass warning with routine citation issued,Case retained for standard monitoring,17,2,0,0.224,0.18,male,multiracial,stable,student,not_enrolled,0
+A-1006,Community outreach contact for basic resource referral,Food and shelter resource list provided,18,0,0,0.235,0.215,nonbinary,asian,family_home,employed,unknown,0
+A-1007,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,22,3,0,0.276,0.25,female,black,temporary,unemployed,enrolled,0
+A-1008,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,27,1,0,0.317,0.25,male,hispanic,unstable,unknown,not_enrolled,0
+A-1009,Public disturbance call with routine service referral,No elevated safety pattern documented,34,2,0,0.358,0.285,nonbinary,white,stable,student,unknown,0
+A-1010,Service referral intake for employment and housing support,Follow up appointment scheduled,41,0,0,0.399,0.32,female,multiracial,family_home,employed,enrolled,0
+A-1011,School counselor requested resource navigation support,Guardian participated in service planning,52,1,0,0.41,0.355,male,asian,temporary,unemployed,not_enrolled,0
+A-1012,Shelter intake for short term housing support,Stable contact information provided,13,2,0,0.451,0.39,nonbinary,black,unstable,unknown,unknown,0
+A-1013,Transit station outreach contact for meal assistance,No follow up safety escalation requested,14,0,0,0.072,0.065,female,hispanic,stable,student,enrolled,0
+A-1014,Family requested mental health referral after argument,Appointment scheduled with community provider,15,0,0,0.113,0.1,male,white,family_home,employed,not_enrolled,0
+A-1015,Patrol contact during park closure after hours,Released to guardian after verification,16,1,0,0.154,0.1,nonbinary,multiracial,temporary,unemployed,unknown,0
+A-1016,Hospital social work referral for routine discharge planning,Transportation voucher issued,17,1,0,0.165,0.135,female,asian,unstable,unknown,enrolled,0
+A-1017,Community center incident involving peer conflict,Mediation referral accepted,18,2,0,0.206,0.17,male,black,stable,student,not_enrolled,0
+A-1018,Basic needs screening during outreach event,Clothing and food assistance provided,22,0,0,0.247,0.205,nonbinary,hispanic,family_home,employed,unknown,0
+A-1019,General welfare check with routine family support needs,Follow up completed by partner team,27,3,0,0.288,0.24,female,white,temporary,unemployed,enrolled,0
+A-1020,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,34,1,0,0.329,0.275,male,multiracial,unstable,unknown,not_enrolled,0
+A-1021,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,41,2,0,0.34,0.31,nonbinary,asian,stable,student,unknown,0
+A-1022,Transportation assistance request after missed bus connection,Individual declined additional services,52,0,0,0.381,0.31,female,black,family_home,employed,enrolled,0
+A-1023,Retail trespass warning with routine citation issued,Case retained for standard monitoring,13,1,0,0.422,0.345,male,hispanic,temporary,unemployed,not_enrolled,0
+A-1024,Community outreach contact for basic resource referral,Food and shelter resource list provided,14,2,0,0.463,0.38,nonbinary,white,unstable,unknown,unknown,0
+A-1025,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,15,0,0,0.084,0.055,female,multiracial,stable,student,enrolled,0
+A-1026,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,16,0,0,0.095,0.09,male,asian,family_home,employed,not_enrolled,0
+A-1027,Public disturbance call with routine service referral,No elevated safety pattern documented,17,1,0,0.136,0.125,nonbinary,black,temporary,unemployed,unknown,0
+A-1028,Service referral intake for employment and housing support,Follow up appointment scheduled,18,1,0,0.177,0.16,female,hispanic,unstable,unknown,enrolled,0
+A-1029,School counselor requested resource navigation support,Guardian participated in service planning,22,2,0,0.218,0.16,male,white,stable,student,not_enrolled,0
+A-1030,Shelter intake for short term housing support,Stable contact information provided,27,0,0,0.259,0.195,nonbinary,multiracial,family_home,employed,unknown,0
+A-1031,Transit station outreach contact for meal assistance,No follow up safety escalation requested,34,3,0,0.27,0.23,female,asian,temporary,unemployed,enrolled,0
+A-1032,Family requested mental health referral after argument,Appointment scheduled with community provider,41,1,0,0.311,0.265,male,black,unstable,unknown,not_enrolled,0
+A-1033,Patrol contact during park closure after hours,Released to guardian after verification,52,2,0,0.352,0.3,nonbinary,hispanic,stable,student,unknown,0
+A-1034,Hospital social work referral for routine discharge planning,Transportation voucher issued,13,0,0,0.393,0.335,female,white,family_home,employed,enrolled,0
+A-1035,Community center incident involving peer conflict,Mediation referral accepted,14,1,0,0.434,0.37,male,multiracial,temporary,unemployed,not_enrolled,0
+A-1036,Basic needs screening during outreach event,Clothing and food assistance provided,15,2,0,0.445,0.37,nonbinary,asian,unstable,unknown,unknown,0
+A-1037,General welfare check with routine family support needs,Follow up completed by partner team,16,0,0,0.066,0.045,female,black,stable,student,enrolled,0
+A-1038,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,17,0,1,0.107,0.08,male,hispanic,family_home,employed,not_enrolled,0
+A-1039,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,18,1,0,0.148,0.115,nonbinary,white,temporary,unemployed,unknown,0
+A-1040,Transportation assistance request after missed bus connection,Individual declined additional services,22,1,0,0.189,0.15,female,multiracial,unstable,unknown,enrolled,0
+A-1041,Retail trespass warning with routine citation issued,Case retained for standard monitoring,27,2,0,0.2,0.185,male,asian,stable,student,not_enrolled,0
+A-1042,Community outreach contact for basic resource referral,Food and shelter resource list provided,34,0,0,0.241,0.22,nonbinary,black,family_home,employed,unknown,0
+A-1043,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,41,3,0,0.282,0.22,female,hispanic,temporary,unemployed,enrolled,0
+A-1044,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,52,1,0,0.323,0.255,male,white,unstable,unknown,not_enrolled,0
+A-1045,Public disturbance call with routine service referral,No elevated safety pattern documented,13,2,0,0.364,0.29,nonbinary,multiracial,stable,student,unknown,0
+A-1046,Service referral intake for employment and housing support,Follow up appointment scheduled,14,0,0,0.375,0.325,female,asian,family_home,employed,enrolled,0
+A-1047,School counselor requested resource navigation support,Guardian participated in service planning,15,1,0,0.416,0.36,male,black,temporary,unemployed,not_enrolled,0
+A-1048,Shelter intake for short term housing support,Stable contact information provided,16,2,0,0.457,0.395,nonbinary,hispanic,unstable,unknown,unknown,0
+A-1049,Transit station outreach contact for meal assistance,No follow up safety escalation requested,17,0,0,0.078,0.07,female,white,stable,student,enrolled,0
+A-1050,Family requested mental health referral after argument,Appointment scheduled with community provider,18,0,0,0.119,0.07,male,multiracial,family_home,employed,not_enrolled,0
+A-1051,Patrol contact during park closure after hours,Released to guardian after verification,22,1,0,0.13,0.105,nonbinary,asian,temporary,unemployed,unknown,0
+A-1052,Hospital social work referral for routine discharge planning,Transportation voucher issued,27,1,0,0.171,0.14,female,black,unstable,unknown,enrolled,0
+A-1053,Community center incident involving peer conflict,Mediation referral accepted,34,2,0,0.212,0.175,male,hispanic,stable,student,not_enrolled,0
+A-1054,Basic needs screening during outreach event,Clothing and food assistance provided,41,0,0,0.253,0.21,nonbinary,white,family_home,employed,unknown,0
+A-1055,General welfare check with routine family support needs,Follow up completed by partner team,52,3,0,0.294,0.245,female,multiracial,temporary,unemployed,enrolled,0
+A-1056,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,13,1,0,0.305,0.28,male,asian,unstable,unknown,not_enrolled,0
+A-1057,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,14,2,0,0.346,0.28,nonbinary,black,stable,student,unknown,0
+A-1058,Transportation assistance request after missed bus connection,Individual declined additional services,15,0,0,0.387,0.315,female,hispanic,family_home,employed,enrolled,0
+A-1059,Retail trespass warning with routine citation issued,Case retained for standard monitoring,16,1,0,0.428,0.35,male,white,temporary,unemployed,not_enrolled,0
+A-1060,Community outreach contact for basic resource referral,Food and shelter resource list provided,17,2,0,0.469,0.385,nonbinary,multiracial,unstable,unknown,unknown,0
+A-1061,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,18,0,0,0.06,0.06,female,asian,stable,student,enrolled,0
+A-1062,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,22,0,0,0.101,0.095,male,black,family_home,employed,not_enrolled,0
+A-1063,Public disturbance call with routine service referral,No elevated safety pattern documented,27,1,0,0.142,0.13,nonbinary,hispanic,temporary,unemployed,unknown,0
+A-1064,Service referral intake for employment and housing support,Follow up appointment scheduled,34,1,0,0.183,0.13,female,white,unstable,unknown,enrolled,0
+A-1065,School counselor requested resource navigation support,Guardian participated in service planning,41,2,0,0.224,0.165,male,multiracial,stable,student,not_enrolled,0
+A-1066,Shelter intake for short term housing support,Stable contact information provided,52,0,0,0.235,0.2,nonbinary,asian,family_home,employed,unknown,0
+A-1067,Transit station outreach contact for meal assistance,No follow up safety escalation requested,13,3,0,0.276,0.235,female,black,temporary,unemployed,enrolled,0
+A-1068,Family requested mental health referral after argument,Appointment scheduled with community provider,14,1,0,0.317,0.27,male,hispanic,unstable,unknown,not_enrolled,0
+A-1069,Patrol contact during park closure after hours,Released to guardian after verification,15,2,0,0.358,0.305,nonbinary,white,stable,student,unknown,0
+A-1070,Hospital social work referral for routine discharge planning,Transportation voucher issued,16,0,0,0.399,0.34,female,multiracial,family_home,employed,enrolled,0
+A-1071,Community center incident involving peer conflict,Mediation referral accepted,17,1,0,0.41,0.34,male,asian,temporary,unemployed,not_enrolled,0
+A-1072,Basic needs screening during outreach event,Clothing and food assistance provided,18,2,0,0.451,0.375,nonbinary,black,unstable,unknown,unknown,0
+A-1073,General welfare check with routine family support needs,Follow up completed by partner team,22,0,0,0.072,0.05,female,hispanic,stable,student,enrolled,0
+A-1074,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,27,0,0,0.113,0.085,male,white,family_home,employed,not_enrolled,0
+A-1075,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,34,1,1,0.154,0.12,nonbinary,multiracial,temporary,unemployed,unknown,0
+A-1076,Transportation assistance request after missed bus connection,Individual declined additional services,41,1,0,0.165,0.155,female,asian,unstable,unknown,enrolled,0
+A-1077,Retail trespass warning with routine citation issued,Case retained for standard monitoring,52,2,0,0.206,0.19,male,black,stable,student,not_enrolled,0
+A-1078,Community outreach contact for basic resource referral,Food and shelter resource list provided,13,0,0,0.247,0.19,nonbinary,hispanic,family_home,employed,unknown,0
+A-1079,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,14,3,0,0.288,0.225,female,white,temporary,unemployed,enrolled,0
+A-1080,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,15,1,0,0.329,0.26,male,multiracial,unstable,unknown,not_enrolled,0
+A-1081,Public disturbance call with routine service referral,No elevated safety pattern documented,16,2,0,0.34,0.295,nonbinary,asian,stable,student,unknown,0
+A-1082,Service referral intake for employment and housing support,Follow up appointment scheduled,17,0,0,0.381,0.33,female,black,family_home,employed,enrolled,0
+A-1083,School counselor requested resource navigation support,Guardian participated in service planning,18,1,0,0.422,0.365,male,hispanic,temporary,unemployed,not_enrolled,0
+A-1084,Shelter intake for short term housing support,Stable contact information provided,22,2,0,0.463,0.4,nonbinary,white,unstable,unknown,unknown,0
+A-1085,Transit station outreach contact for meal assistance,No follow up safety escalation requested,27,0,0,0.084,0.04,female,multiracial,stable,student,enrolled,0
+A-1086,Family requested mental health referral after argument,Appointment scheduled with community provider,34,0,0,0.095,0.075,male,asian,family_home,employed,not_enrolled,0
+A-1087,Patrol contact during park closure after hours,Released to guardian after verification,41,1,0,0.136,0.11,nonbinary,black,temporary,unemployed,unknown,0
+A-1088,Hospital social work referral for routine discharge planning,Transportation voucher issued,52,1,0,0.177,0.145,female,hispanic,unstable,unknown,enrolled,0
+A-1089,Community center incident involving peer conflict,Mediation referral accepted,13,2,0,0.218,0.18,male,white,stable,student,not_enrolled,0
+A-1090,Basic needs screening during outreach event,Clothing and food assistance provided,14,0,0,0.259,0.215,nonbinary,multiracial,family_home,employed,unknown,0
+A-1091,General welfare check with routine family support needs,Follow up completed by partner team,15,3,0,0.27,0.25,female,asian,temporary,unemployed,enrolled,0
+A-1092,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,16,1,0,0.311,0.25,male,black,unstable,unknown,not_enrolled,0
+A-1093,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,17,2,0,0.352,0.285,nonbinary,hispanic,stable,student,unknown,0
+A-1094,Transportation assistance request after missed bus connection,Individual declined additional services,18,0,0,0.393,0.32,female,white,family_home,employed,enrolled,0
+A-1095,Retail trespass warning with routine citation issued,Case retained for standard monitoring,22,1,0,0.434,0.355,male,multiracial,temporary,unemployed,not_enrolled,0
+A-1096,Community outreach contact for basic resource referral,Food and shelter resource list provided,27,2,0,0.445,0.39,nonbinary,asian,unstable,unknown,unknown,0
+A-1097,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,34,0,0,0.066,0.065,female,black,stable,student,enrolled,0
+A-1098,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,41,0,0,0.107,0.1,male,hispanic,family_home,employed,not_enrolled,0
+A-1099,Public disturbance call with routine service referral,No elevated safety pattern documented,52,1,0,0.148,0.1,nonbinary,white,temporary,unemployed,unknown,0
+A-1100,Service referral intake for employment and housing support,Follow up appointment scheduled,13,1,0,0.189,0.135,female,multiracial,unstable,unknown,enrolled,0
+A-1101,School counselor requested resource navigation support,Guardian participated in service planning,14,2,0,0.2,0.17,male,asian,stable,student,not_enrolled,0
+A-1102,Shelter intake for short term housing support,Stable contact information provided,15,0,0,0.241,0.205,nonbinary,black,family_home,employed,unknown,0
+A-1103,Transit station outreach contact for meal assistance,No follow up safety escalation requested,16,3,0,0.282,0.24,female,hispanic,temporary,unemployed,enrolled,0
+A-1104,Family requested mental health referral after argument,Appointment scheduled with community provider,17,1,0,0.323,0.275,male,white,unstable,unknown,not_enrolled,0
+A-1105,Patrol contact during park closure after hours,Released to guardian after verification,18,2,0,0.364,0.31,nonbinary,multiracial,stable,student,unknown,0
+A-1106,Hospital social work referral for routine discharge planning,Transportation voucher issued,22,0,0,0.375,0.31,female,asian,family_home,employed,enrolled,0
+A-1107,Community center incident involving peer conflict,Mediation referral accepted,27,1,0,0.416,0.345,male,black,temporary,unemployed,not_enrolled,0
+A-1108,Basic needs screening during outreach event,Clothing and food assistance provided,34,2,0,0.457,0.38,nonbinary,hispanic,unstable,unknown,unknown,0
+A-1109,General welfare check with routine family support needs,Follow up completed by partner team,41,0,0,0.078,0.055,female,white,stable,student,enrolled,0
+A-1110,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,52,0,0,0.119,0.09,male,multiracial,family_home,employed,not_enrolled,0
+A-1111,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,13,1,0,0.13,0.125,nonbinary,asian,temporary,unemployed,unknown,0
+A-1112,Transportation assistance request after missed bus connection,Individual declined additional services,14,1,1,0.171,0.16,female,black,unstable,unknown,enrolled,0
+A-1113,Retail trespass warning with routine citation issued,Case retained for standard monitoring,15,2,0,0.212,0.16,male,hispanic,stable,student,not_enrolled,0
+A-1114,Community outreach contact for basic resource referral,Food and shelter resource list provided,16,0,0,0.253,0.195,nonbinary,white,family_home,employed,unknown,0
+A-1115,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,17,3,0,0.294,0.23,female,multiracial,temporary,unemployed,enrolled,0
+A-1116,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,18,1,0,0.305,0.265,male,asian,unstable,unknown,not_enrolled,0
+A-1117,Public disturbance call with routine service referral,No elevated safety pattern documented,22,2,0,0.346,0.3,nonbinary,black,stable,student,unknown,0
+A-1118,Service referral intake for employment and housing support,Follow up appointment scheduled,27,0,0,0.387,0.335,female,hispanic,family_home,employed,enrolled,0
+A-1119,School counselor requested resource navigation support,Guardian participated in service planning,34,1,0,0.428,0.37,male,white,temporary,unemployed,not_enrolled,0
+A-1120,Shelter intake for short term housing support,Stable contact information provided,41,2,0,0.469,0.37,nonbinary,multiracial,unstable,unknown,unknown,0
+A-1121,Transit station outreach contact for meal assistance,No follow up safety escalation requested,52,0,0,0.06,0.045,female,asian,stable,student,enrolled,0
+A-1122,Family requested mental health referral after argument,Appointment scheduled with community provider,13,0,0,0.101,0.08,male,black,family_home,employed,not_enrolled,0
+A-1123,Patrol contact during park closure after hours,Released to guardian after verification,14,1,0,0.142,0.115,nonbinary,hispanic,temporary,unemployed,unknown,0
+A-1124,Hospital social work referral for routine discharge planning,Transportation voucher issued,15,1,0,0.183,0.15,female,white,unstable,unknown,enrolled,0
+A-1125,Community center incident involving peer conflict,Mediation referral accepted,16,2,0,0.224,0.185,male,multiracial,stable,student,not_enrolled,0
+A-1126,Basic needs screening during outreach event,Clothing and food assistance provided,17,0,0,0.235,0.22,nonbinary,asian,family_home,employed,unknown,0
+A-1127,General welfare check with routine family support needs,Follow up completed by partner team,18,3,0,0.276,0.22,female,black,temporary,unemployed,enrolled,0
+A-1128,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,22,1,0,0.317,0.255,male,hispanic,unstable,unknown,not_enrolled,0
+A-1129,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,27,2,0,0.358,0.29,nonbinary,white,stable,student,unknown,0
+A-1130,Transportation assistance request after missed bus connection,Individual declined additional services,34,0,0,0.399,0.325,female,multiracial,family_home,employed,enrolled,0
+A-1131,Retail trespass warning with routine citation issued,Case retained for standard monitoring,41,1,0,0.41,0.36,male,asian,temporary,unemployed,not_enrolled,0
+A-1132,Community outreach contact for basic resource referral,Food and shelter resource list provided,52,2,0,0.451,0.395,nonbinary,black,unstable,unknown,unknown,0
+A-1133,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,13,0,0,0.072,0.07,female,hispanic,stable,student,enrolled,0
+A-1134,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,14,0,0,0.113,0.07,male,white,family_home,employed,not_enrolled,0
+A-1135,Public disturbance call with routine service referral,No elevated safety pattern documented,15,1,0,0.154,0.105,nonbinary,multiracial,temporary,unemployed,unknown,0
+A-1136,Service referral intake for employment and housing support,Follow up appointment scheduled,16,1,0,0.165,0.14,female,asian,unstable,unknown,enrolled,0
+A-1137,School counselor requested resource navigation support,Guardian participated in service planning,17,2,0,0.206,0.175,male,black,stable,student,not_enrolled,0
+A-1138,Shelter intake for short term housing support,Stable contact information provided,18,0,0,0.247,0.21,nonbinary,hispanic,family_home,employed,unknown,0
+A-1139,Transit station outreach contact for meal assistance,No follow up safety escalation requested,22,3,0,0.288,0.245,female,white,temporary,unemployed,enrolled,0
+A-1140,Family requested mental health referral after argument,Appointment scheduled with community provider,27,1,0,0.329,0.28,male,multiracial,unstable,unknown,not_enrolled,0
+A-1141,Patrol contact during park closure after hours,Released to guardian after verification,34,2,0,0.34,0.28,nonbinary,asian,stable,student,unknown,0
+A-1142,Hospital social work referral for routine discharge planning,Transportation voucher issued,41,0,0,0.381,0.315,female,black,family_home,employed,enrolled,0
+A-1143,Community center incident involving peer conflict,Mediation referral accepted,52,1,0,0.422,0.35,male,hispanic,temporary,unemployed,not_enrolled,0
+A-1144,Basic needs screening during outreach event,Clothing and food assistance provided,13,2,0,0.463,0.385,nonbinary,white,unstable,unknown,unknown,0
+A-1145,General welfare check with routine family support needs,Follow up completed by partner team,14,0,0,0.084,0.06,female,multiracial,stable,student,enrolled,0
+A-1146,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,15,0,0,0.095,0.095,male,asian,family_home,employed,not_enrolled,0
+A-1147,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,16,1,0,0.136,0.13,nonbinary,black,temporary,unemployed,unknown,0
+A-1148,Transportation assistance request after missed bus connection,Individual declined additional services,17,1,0,0.177,0.13,female,hispanic,unstable,unknown,enrolled,0
+A-1149,Retail trespass warning with routine citation issued,Case retained for standard monitoring,18,2,1,0.218,0.165,male,white,stable,student,not_enrolled,0
+A-1150,Community outreach contact for basic resource referral,Food and shelter resource list provided,22,0,0,0.259,0.2,nonbinary,multiracial,family_home,employed,unknown,0
+A-1151,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,27,3,0,0.27,0.235,female,asian,temporary,unemployed,enrolled,0
+A-1152,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,34,1,0,0.311,0.27,male,black,unstable,unknown,not_enrolled,0
+A-1153,Public disturbance call with routine service referral,No elevated safety pattern documented,41,2,0,0.352,0.305,nonbinary,hispanic,stable,student,unknown,0
+A-1154,Service referral intake for employment and housing support,Follow up appointment scheduled,52,0,0,0.393,0.34,female,white,family_home,employed,enrolled,0
+A-1155,School counselor requested resource navigation support,Guardian participated in service planning,13,1,0,0.434,0.34,male,multiracial,temporary,unemployed,not_enrolled,0
+A-1156,Shelter intake for short term housing support,Stable contact information provided,14,2,0,0.445,0.375,nonbinary,asian,unstable,unknown,unknown,0
+A-1157,Transit station outreach contact for meal assistance,No follow up safety escalation requested,15,0,0,0.066,0.05,female,black,stable,student,enrolled,0
+A-1158,Family requested mental health referral after argument,Appointment scheduled with community provider,16,0,0,0.107,0.085,male,hispanic,family_home,employed,not_enrolled,0
+A-1159,Patrol contact during park closure after hours,Released to guardian after verification,17,1,0,0.148,0.12,nonbinary,white,temporary,unemployed,unknown,0
+A-1160,Hospital social work referral for routine discharge planning,Transportation voucher issued,18,1,0,0.189,0.155,female,multiracial,unstable,unknown,enrolled,0
+A-1161,Community center incident involving peer conflict,Mediation referral accepted,22,2,0,0.2,0.19,male,asian,stable,student,not_enrolled,0
+A-1162,Basic needs screening during outreach event,Clothing and food assistance provided,27,0,0,0.241,0.19,nonbinary,black,family_home,employed,unknown,0
+A-1163,General welfare check with routine family support needs,Follow up completed by partner team,34,3,0,0.282,0.225,female,hispanic,temporary,unemployed,enrolled,0
+A-1164,Noise complaint and neighborhood dispute resolved on scene,No immediate safety concern documented,41,1,0,0.323,0.26,male,white,unstable,unknown,not_enrolled,0
+A-1165,Curfew contact with guardian notified and stable residence confirmed,School attendance verified during outreach,52,2,0,0.364,0.295,nonbinary,multiracial,stable,student,unknown,0
+A-1166,Transportation assistance request after missed bus connection,Individual declined additional services,13,0,0,0.375,0.33,female,asian,family_home,employed,enrolled,0
+A-1167,Retail trespass warning with routine citation issued,Case retained for standard monitoring,14,1,0,0.416,0.365,male,black,temporary,unemployed,not_enrolled,0
+A-1168,Community outreach contact for basic resource referral,Food and shelter resource list provided,15,2,0,0.457,0.4,nonbinary,hispanic,unstable,unknown,unknown,0
+A-1169,Youth family disagreement at residence resolved with mediator support,No unresolved absence pattern noted,16,0,0,0.078,0.04,female,white,stable,student,enrolled,0
+A-1170,Wellness visit requested by family member after brief absence,Returned home voluntarily and guardian present,17,0,0,0.119,0.075,male,multiracial,family_home,employed,not_enrolled,0
+A-1171,Public disturbance call with routine service referral,No elevated safety pattern documented,18,1,0,0.13,0.11,nonbinary,asian,temporary,unemployed,unknown,0
+A-1172,Service referral intake for employment and housing support,Follow up appointment scheduled,22,1,0,0.171,0.145,female,black,unstable,unknown,enrolled,0
+A-1173,School counselor requested resource navigation support,Guardian participated in service planning,27,2,0,0.212,0.18,male,hispanic,stable,student,not_enrolled,0
+A-1174,Shelter intake for short term housing support,Stable contact information provided,34,0,0,0.253,0.215,nonbinary,white,family_home,employed,unknown,0
+A-1175,Transit station outreach contact for meal assistance,No follow up safety escalation requested,41,3,0,0.294,0.25,female,multiracial,temporary,unemployed,enrolled,0
+A-1176,Family requested mental health referral after argument,Appointment scheduled with community provider,52,1,0,0.305,0.25,male,asian,unstable,unknown,not_enrolled,0
+A-1177,Patrol contact during park closure after hours,Released to guardian after verification,13,2,0,0.346,0.285,nonbinary,black,stable,student,unknown,0
+A-1178,Hospital social work referral for routine discharge planning,Transportation voucher issued,14,0,0,0.387,0.32,female,hispanic,family_home,employed,enrolled,0
+A-1179,Community center incident involving peer conflict,Mediation referral accepted,15,1,0,0.428,0.355,male,white,temporary,unemployed,not_enrolled,0
+A-1180,Basic needs screening during outreach event,Clothing and food assistance provided,16,2,0,0.469,0.39,nonbinary,multiracial,unstable,unknown,unknown,0
+A-2001,Minor runaway report with trafficking concern near hotel location,Older boyfriend noted and missing history present,14,3,1,0.72,0.68,female,black,unstable,student,enrolled,1
+A-2002,Commercial sex indicator reported with coercion and control concerns,Victim appeared fearful and withdrawn during contact,15,4,1,0.78,0.72,female,hispanic,temporary,unemployed,unknown,1
+A-2003,Repeated runaway history with exploitation and branding concerns,Multiple phones and cash control reported by outreach staff,16,5,1,0.82,0.8,female,white,unstable,unknown,not_enrolled,1
+A-2004,Escort advertisement tip involving minor and hotel pattern,Prior contacts indicate transport by older companion,17,6,1,0.86,0.84,female,multiracial,unstable,student,enrolled,1
+A-2005,Field report describes recruitment pressure and substance use vulnerability,Unstable housing and missing history elevated concern,18,7,1,0.91,0.92,nonbinary,asian,temporary,student,enrolled,1
+A-2006,Incident narrative mentions commercial sex and fear of older boyfriend,Counselor noted coercion and control indicators,19,4,0,0.74,0.76,female,black,unstable,unemployed,unknown,1
+A-2007,Hotel welfare check found minor with unrelated adult companion,Runaway history and tattoo branding concern documented,21,5,1,0.88,0.88,female,hispanic,temporary,unknown,not_enrolled,1
+A-2008,Outreach team flagged exploitation concern after repeated transport pattern,Individual appeared withdrawn and avoided answering questions,22,6,1,0.94,0.95,female,white,unstable,student,enrolled,1
+A-2009,Case note includes trafficking keyword and cash control details,Prior contacts and location risk suggest urgent review,14,3,1,0.8,0.82,female,multiracial,unstable,student,enrolled,1
+A-2010,Missing youth recovered near motel with recruitment concern,Older boyfriend and multiple phones noted by investigator,15,5,1,0.9,0.9,nonbinary,asian,temporary,unemployed,unknown,1
+A-2011,Minor contacted during hotel patrol with control indicators,Companion held identification and cash,16,3,1,0.72,0.68,female,black,unstable,unknown,not_enrolled,1
+A-2012,Field interview suggests coercion and restricted movement,Fearful presentation and unstable housing documented,17,4,0,0.78,0.72,female,hispanic,temporary,student,enrolled,1
+A-2013,Runaway recovery included commercial sex disclosure,Immediate service referral and analyst review recommended,18,5,1,0.82,0.8,female,white,unstable,student,enrolled,1
+A-2014,Transport pattern between motel areas raised exploitation concern,Multiple prior contacts and fearful behavior noted,19,6,1,0.86,0.84,female,multiracial,unstable,unemployed,unknown,1
+A-2015,Online escort tip matched missing youth report,Location risk and age indicators elevated,21,7,1,0.91,0.92,nonbinary,asian,temporary,unknown,not_enrolled,1
+A-2016,Youth reported recruitment by older peer for cash exchange,Substance use vulnerability and unstable housing noted,22,4,1,0.74,0.76,female,black,unstable,student,enrolled,1
+A-2017,Branding tattoo concern observed during outreach contact,Runaway history and older boyfriend documented,14,5,1,0.88,0.88,female,hispanic,temporary,student,enrolled,1
+A-2018,Commercial sex language found in case note with minor involved,Withdrawn presentation and missing history present,15,6,0,0.94,0.95,female,white,unstable,unemployed,unknown,1
+A-2019,Hotel disturbance involved unrelated adult controlling conversation,Minor avoided questions and appeared fearful,16,3,1,0.8,0.82,female,multiracial,unstable,unknown,not_enrolled,1
+A-2020,Trafficking concern escalated after repeated missing episodes,High location risk and multiple phones reported,17,5,1,0.9,0.9,nonbinary,asian,temporary,student,enrolled,1
