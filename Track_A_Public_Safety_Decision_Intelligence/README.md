@@ -73,5 +73,9 @@ Intended flow:
 3. Review evaluation metrics and calibrate thresholds for operational use
 4. (Optional) Launch a dashboard for case triage and monitoring
 
+## Current starter scripts
+
+- `prioritization_engine.py`: rule-based starter engine for extracting text and structured signals, assigning priority bands, and generating a review queue.
+- `victim_identification_workflow.py`: foundational workflow for training a structured victim-identification classifier, scoring case likelihoods, and combining ML probabilities with rule-based prioritization.
 
 

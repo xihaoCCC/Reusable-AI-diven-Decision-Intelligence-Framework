@@ -164,3 +164,4 @@ cython_debug/
 # Local planning / workspace artifacts
 doc/
 .idea/
+.DS_Store

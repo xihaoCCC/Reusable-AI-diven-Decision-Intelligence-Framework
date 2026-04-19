@@ -138,3 +138,9 @@ track-b/
 ├── planning_outputs/
 ├── examples/
 └── README.md
+```
+
+## Current starter scripts
+
+- `context_aware_forecaster.py`: lightweight context-aware forecaster that combines recent baseline behavior, weekday seasonality, trend, and event multipliers.
+- `demand_forecasting_workflow.py`: foundational workflow for building future horizons, running shared baseline forecasters, running the context-aware forecaster, and summarizing forecast outputs for planning review.
