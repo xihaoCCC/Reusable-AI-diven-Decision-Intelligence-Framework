@@ -2,4 +2,8 @@ numpy
 pandas
 scipy
 scikit-learn
+statsmodels
 matplotlib
+
+# Optional for standardized_AI_core.models.forecasting.SimpleMLPForecaster:
+# torch
