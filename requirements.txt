@@ -2,8 +2,9 @@ numpy
 pandas
 scipy
 scikit-learn
-statsmodels
 matplotlib
+pyyaml
 
-# Optional for standardized_AI_core.models.forecasting.SimpleMLPForecaster:
-# torch
+# Optional: used when available for the paper's primary exploitation-type task module.
+# The prototype falls back to scikit-learn HistGradientBoostingClassifier if absent.
+# xgboost

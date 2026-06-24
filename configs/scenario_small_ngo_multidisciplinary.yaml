@@ -1,0 +1,21 @@
+scenario_id: small_ngo_multidisciplinary
+name: Small NGO multidisciplinary triage queue
+target_probability: P(Both)
+confidence_threshold: 0.70
+review_capacity_k: 30
+route_label: Multidisciplinary review
+indicator_focus:
+  - threats
+  - abuse_indicators
+  - denial_basic_needs
+  - drugs_alcohol_control
+  - false_promises
+  - minor_young_indicator
+  - close_recruiter_relationship
+priority_weights:
+  confidence: 0.20
+  target_probability: 0.35
+  control: 0.20
+  vulnerability: 0.15
+  relationship: 0.10
+

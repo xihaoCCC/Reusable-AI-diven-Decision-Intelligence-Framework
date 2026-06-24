@@ -1,14 +1,8 @@
 # Sample Data
 
-This folder contains synthetic, public-safe data for quick demos and basic tests.
+The active prototype generates CTDC-informed synthetic records at runtime through
+`src.utils.generate_ctdc_style_synthetic_records`.
 
-## Files
-
-- `track_a_synthetic_cases.csv`: 200 synthetic Track A case records with 180 non-victim examples and 20 victim-labeled examples.
-- `track_b_synthetic_demand.csv`: 3 synthetic Track B daily demand series spanning January 1, 2026 through March 31, 2026.
-
-## Important Notes
-
-- These records are fully synthetic and should not be interpreted as real operational data.
-- Track A labels are included only to support model smoke tests and workflow demos.
-- Track B demand values are intentionally scaled differently by department so forecasting models can be tested across small, medium, and large demand magnitudes.
+No real hotline, intake, referral, outreach, case-note, service, public-safety,
+or victim-service records are included in this repository. Historical two-track
+sample files were moved to `archive/legacy_two_track_repo/` for reference.

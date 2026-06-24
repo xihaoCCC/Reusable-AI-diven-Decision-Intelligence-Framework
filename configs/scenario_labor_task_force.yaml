@@ -1,0 +1,20 @@
+scenario_id: labor_task_force
+name: Labor-exploitation task force triage queue
+target_probability: max(P(Labor), P(Both))
+confidence_threshold: 0.60
+review_capacity_k: 30
+route_label: Labor-focused review or labor-plus-multidisciplinary review
+indicator_focus:
+  - debt_bondage
+  - excessive_work_hours
+  - withheld_documents
+  - denial_basic_needs
+  - threats
+  - close_recruiter_relationship
+priority_weights:
+  confidence: 0.20
+  target_probability: 0.35
+  control: 0.20
+  vulnerability: 0.15
+  relationship: 0.10
+
