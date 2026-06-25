@@ -13,9 +13,8 @@ indicator_focus:
   - minor_young_indicator
   - close_recruiter_relationship
 priority_weights:
-  confidence: 0.20
+  confidence: 0.30
   target_probability: 0.35
   control: 0.20
-  vulnerability: 0.15
+  vulnerability: 0.05
   relationship: 0.10
-

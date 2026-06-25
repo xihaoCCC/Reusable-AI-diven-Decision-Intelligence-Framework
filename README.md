@@ -1,65 +1,122 @@
-# From Detection to Frontline Decision Support
+# Reusable AI-Driven Decision Support for Anti-Trafficking Operations
 
-Research prototype for **From Detection to Frontline Decision Support: A Configurable AI Framework for Anti-Trafficking Triage and Resource Allocation**.
+This repository is the implementation foundation for a reusable, configurable, and
+human-in-the-loop AI decision-support framework for frontline anti-trafficking
+operations.
 
-This repository implements a configurable AI-enabled decision-support framework for frontline anti-trafficking organizations. It is designed to help nonprofits, victim-service providers, outreach partners, and public-safety agencies convert heterogeneous agency-owned records into explainable triage, routing, and review-queue signals.
+It is designed to help nonprofits, victim-service providers, outreach partners, and
+public-safety agencies convert heterogeneous agency-owned records into standardized
+features, reusable AI signals, configurable triage priorities, routing suggestions, and
+review queues.
 
-This project is **not** an autonomous victim-identification system. It does not make final legal, service, investigative, or case-management decisions. Outputs are review signals for trained human reviewers.
+The repository is broader than a single model or research prototype. Its long-term
+purpose is to maintain the framework's reusable components and a growing collection of
+reviewed, versioned AI Core artifacts that organizations can evaluate and adapt for
+local tasks.
 
-## Motivation
+This project is **not** an autonomous victim-identification system. It does not make
+final legal, service, investigative, eligibility, or case-management decisions.
+Outputs are review signals for trained human reviewers.
 
-Frontline anti-trafficking work is often framed as a detection problem: identify whether a record indicates trafficking. The paper behind this repository argues that detection alone is not enough. Many organizations also need low-overhead tools for triage, routing, review capacity planning, and resource allocation.
+## Why This Framework Exists
 
-Operational data may arrive as hotline logs, intake forms, referral records, outreach notes, case notes, service records, or public-safety records. These records are heterogeneous, sensitive, and locally governed. The framework therefore separates reusable AI components from local data mapping and configurable decision rules.
+Frontline anti-trafficking organizations often hold useful hotline, intake, referral,
+outreach, case-note, service, and public-safety records, but may lack the staff,
+infrastructure, or labeled data needed to build operational AI systems from scratch.
+
+The framework addresses this adoption gap by separating:
+
+- local data mapping from reusable technical components;
+- model outputs from organization-specific decision rules;
+- cold-start use of pre-trained artifacts from later local learning; and
+- AI suggestions from accountable human decisions.
 
 ## Framework Architecture
 
-The repository follows the paper's four-layer framework.
+### 1. Operational Data Mapping Layer
 
-1. **Operational Data Mapping Layer**  
-   Converts heterogeneous agency-owned records into standardized trafficking-related features. This includes field normalization, missingness handling, local-to-standard concept mapping, CTDC/HTCDS-style alignment, data-quality checks, and mapping documentation.
+Maps heterogeneous local records to documented, standardized trafficking-related
+concepts while preserving relevant local fields. Responsibilities include field
+normalization, missingness handling, local-to-standard concept mapping, HTCDS-aligned
+documentation, data-quality checks, and protected-field controls.
 
-2. **Standardized AI Core**  
-   Provides reusable AI/data-science components that frontline organizations do not need to build from scratch. The prototype includes an exploitation-type classifier, probability outputs, confidence scoring, evaluation utilities, monitoring-ready outputs, and explanation-friendly indicators.
+### 2. Standardized AI Core
 
-3. **Configurable Decision Layer**  
-   Converts AI outputs into organization-specific triage logic. Scenario configuration files define review capacity `K`, confidence thresholds, target probabilities, priority weights, escalation criteria, indicator focus, route labels, and protected-field restrictions.
+Provides reusable components that organizations do not need to build independently:
 
-4. **Human Review and Presentation Layer**  
-   Produces ranked review queues with predicted exploitation type, probability outputs, priority scores, key indicators, suggested routes, and reviewer-action placeholders. AI suggests, scores, ranks, and explains; trained staff review, contextualize, correct, override, and decide.
+- versioned pre-trained task modules;
+- rule-informed scoring and ranking modules;
+- probability and confidence outputs;
+- evaluation and threshold-analysis utilities;
+- monitoring and drift checks;
+- explanation and interpretability tools;
+- schemas, model cards, and artifact provenance; and
+- common loading and inference interfaces.
+
+The AI Core is intended to expand over time. Potential modules include
+exploitation-type suggestion, service-need prediction, urgency scoring, referral
+routing, text mining, and other responsibly developed anti-trafficking tasks.
+
+### 3. Configurable Decision Layer
+
+Translates reusable AI outputs into organization-specific triage and resource-allocation
+logic. Configuration may include review capacity `K`, confidence thresholds, target
+probabilities, priority weights, escalation criteria, indicator groups, protected-field
+restrictions, service/referral rules, and routing logic.
+
+The same AI Core output can support different organizational missions without
+retraining the underlying model.
+
+### 4. Human Review and Presentation Layer
+
+Presents ranked queues, probability distributions, confidence, priority scores, key
+indicators, missing-data warnings, suggested routes, reviewer-action fields, feedback
+capture, and audit-ready records.
+
+AI suggests, scores, ranks, and explains. Trained staff review, contextualize, correct,
+override, and decide.
 
 ## Deployment Modes
 
-**Cold-start deployment** supports organizations with little or no local labeled data. They can use reusable pre-trained task modules or rule-informed scoring, then validate outputs locally before operational use.
+**Cold-start deployment** allows organizations with little or no local labeled data to
+begin with reviewed pre-trained task modules or rule-informed scoring. Local validation
+is still required before operational use.
 
-**Local-learning deployment** supports organizations with enough labeled local records or reviewer feedback. They can train or fine-tune task modules with their own records, evaluate performance locally, and use reviewer actions as feedback for monitoring and future model updates.
+**Local-learning deployment** allows organizations with sufficient labeled history or
+reviewer feedback to train, fine-tune, recalibrate, or replace modules using locally
+governed data and site-specific evaluation.
 
-## CTDC-Informed Prototype
+## First AI Core Module: CTDC Exploitation-Type Classification
 
-The submitted paper includes a CTDC-informed prototype using the CTDC Global Synthetic Dataset v2026. This repository mirrors that workflow with synthetic CTDC-style records generated at runtime for reproducible demonstration.
-
-The prototype trains an exploitation-type classifier for three classes:
+The first implemented task module is informed by the CTDC Global Synthetic Dataset
+v2026 and predicts three exploitation-type classes:
 
 - `Sex`: sex / sexual exploitation only
 - `Labor`: labor / forced labor only
 - `Both`: mixed sexual and labor exploitation
 
-It includes logistic regression as a transparent baseline and an XGBoost-style primary task module. If `xgboost` is installed, the classifier uses it; otherwise it falls back to scikit-learn's histogram gradient boosting so the example remains runnable in lightweight environments.
-
-The model outputs:
+Its interface produces:
 
 - `P(Sex)`
 - `P(Labor)`
 - `P(Both)`
-- `confidence = max predicted probability`
+- `confidence = max(P(Sex), P(Labor), P(Both))`
 
-## Example Triage Scenarios
+The published prototype used multinomial logistic regression as a transparent baseline
+and XGBoost as the primary pre-trained module. The current repository code is an early
+implementation. The next development phase will rebuild the training pipeline,
+strengthen validation and calibration, and publish a versioned artifact bundle with
+preprocessing objects, feature schemas, model cards, evaluation reports, and loading
+APIs.
 
-Scenario A, **Small NGO multidisciplinary triage queue**, uses `P(Both)` as the target probability. It prioritizes records that may require broader multidisciplinary coordination.
+Age and gender are retained as candidate model features. Their contribution and risks
+must be evaluated through ablation, subgroup analysis, documentation, and governance
+controls. Their inclusion in a trained model does not imply that an organization should
+use them operationally without local ethical and legal review.
 
-Scenario B, **Labor-exploitation task force**, uses `max(P(Labor), P(Both))` as the target probability. It prioritizes labor or mixed-exploitation signals.
+## Reusable Priority Scoring
 
-The priority score follows the paper prototype:
+The framework includes a configurable priority-scoring component:
 
 ```text
 Priority_i,s = 100 * (
@@ -71,91 +128,101 @@ Priority_i,s = 100 * (
 )
 ```
 
-The default review capacity is `K = 30` records from a simulated local review set of 200 records in the runnable example. You can change `review_capacity_k` in the scenario YAML files.
+The scoring engine is reusable. Each organization or scenario controls its target
+probability, indicator groups, weights, confidence threshold, review capacity, and
+routing rules through configuration.
+
+The repository currently demonstrates:
+
+- a small-NGO multidisciplinary queue using `P(Both)`; and
+- a labor-focused task-force queue using `max(P(Labor), P(Both))`.
+
+These scenarios are demonstrations, not universal operational policies.
+
+## Relationship To The Publication
+
+The paper **From Detection to Frontline Decision Support: A Configurable AI Framework
+for Anti-Trafficking Triage and Resource Allocation** formally introduces the
+architecture and demonstrates a CTDC-informed cold-start prototype.
+
+The paper is the publication describing the framework. This repository is the evolving
+framework codebase. The CTDC experiment is the first reference implementation and
+reproduction case, not the repository's complete scope.
 
 ## Repository Structure
 
 ```text
 .
-├── README.md
-├── configs/
-│   ├── scenario_labor_task_force.yaml
-│   └── scenario_small_ngo_multidisciplinary.yaml
-├── docs/
-│   ├── data_mapping.md
-│   ├── framework_overview.md
-│   ├── responsible_use.md
-│   └── triage_configuration.md
-├── examples/
-│   └── run_ctdc_exploitation_type_prototype.py
-├── outputs/
-│   ├── figures/
-│   ├── sample_review_queues/
-│   └── tables/
-├── sample_data/
+├── configs/                 # Organization/scenario decision configuration
+├── docs/                    # Architecture, governance, artifact, and roadmap docs
+├── examples/                # Runnable end-to-end examples
+├── notebooks/               # Public reproduction and demonstration notebooks
+├── outputs/                 # Sample tables, figures, and review queues
+├── sample_data/             # Documentation and approved public-safe samples only
 ├── src/
-│   ├── ai_core/
-│   ├── data_mapping/
-│   ├── decision_layer/
-│   ├── evaluation/
-│   ├── human_review/
+│   ├── data_mapping/        # Operational Data Mapping Layer
+│   ├── ai_core/             # Reusable models, scoring, evaluation, explanations
+│   ├── decision_layer/      # Configurable triage and routing
+│   ├── human_review/        # Review-queue and feedback interfaces
+│   ├── evaluation/          # Predictive and operational evaluation
 │   └── utils/
-└── tests/
+├── tests/
+├── AGENTS.md                # Durable project context for coding agents
+└── ROADMAP.md               # Planned model and framework development
 ```
 
-Legacy two-track material, including the prior supply-chain forecasting track, has been moved to `archive/legacy_two_track_repo/` and is not part of the active prototype.
+Local exploratory training, raw data, tuning runs, candidate models, and temporary
+outputs belong in the sibling `Local_runner/` workspace rather than this public repo.
 
-## Installation
+## Current Runnable Demonstration
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-Optional:
-
-```bash
-pip install xgboost
-```
-
-## Run The Prototype
-
-```bash
 python examples/run_ctdc_exploitation_type_prototype.py
 ```
 
-Expected outputs:
+The current example produces two sample review queues under
+`outputs/sample_review_queues/`. It demonstrates the framework interface but should
+not be confused with the forthcoming release-quality CTDC artifact.
 
-- Top-K multidisciplinary review queue:
-  `outputs/sample_review_queues/small_ngo_multidisciplinary_top_k_review_queue.csv`
-- Top-K labor task-force review queue:
-  `outputs/sample_review_queues/labor_task_force_top_k_review_queue.csv`
+## Data Availability
 
-Each queue includes `case_id`, route label, priority score, predicted exploitation type, probability outputs, confidence, target probability, key indicators, review selection, and reviewer-action placeholders.
+The CTDC Global Synthetic Dataset and codebook are not committed because
+redistribution permission has not yet been confirmed. Users must obtain data through
+an authorized source and follow the applicable terms.
+
+No real hotline, intake, referral, outreach, case-note, service, victim, or
+public-safety records are included.
 
 ## Responsible Use
 
-This repository supports decision support, not automated final decision-making.
-
 - Outputs are review signals, not determinations.
-- Human reviewers should retain authority over final decisions.
-- Local validation is required before any real-world deployment.
-- Anti-trafficking data are sensitive and require access control, privacy safeguards, audit logging, and careful governance.
-- Protected or sensitive attributes should be restricted, audited, or used only when ethically and operationally justified.
-- The CTDC-informed prototype is not field validation and should not be represented as proof of real-world deployment performance.
+- Human reviewers retain authority over final decisions.
+- Local validation is required before real-world deployment.
+- Anti-trafficking data require access controls, data minimization, privacy safeguards,
+  retention policies, audit logging, and careful governance.
+- Sensitive attributes require explicit justification, documentation, auditing, and
+  appropriate restrictions.
+- Pre-trained artifacts must be evaluated for distribution shift, calibration,
+  subgroup performance, and task fit before local use.
+- The CTDC-informed experiment is not field validation or proof of deployment
+  performance.
 
-See [docs/responsible_use.md](docs/responsible_use.md) for more detail.
+See [docs/responsible_use.md](docs/responsible_use.md).
 
-## CTDC Synthetic Data Acknowledgment
+## Development Roadmap
 
-The paper prototype is informed by the CTDC Global Synthetic Dataset v2026. This repository does not include real CTDC records or real operational records. The runnable example generates synthetic CTDC-style records for research and prototype demonstration.
+See [ROADMAP.md](ROADMAP.md) for the model-retraining, artifact-release, and broader
+framework implementation plan.
 
 ## Citation
 
-Citation placeholder:
+> Cao, X. *From Detection to Frontline Decision Support: A Configurable AI Framework
+> for Anti-Trafficking Triage and Resource Allocation*.
 
-> Cao, X. (submitted). *From Detection to Frontline Decision Support: A Configurable AI Framework for Anti-Trafficking Triage and Resource Allocation*.
+Publication metadata will be added when the final citation details are available.
 
 ## License
 

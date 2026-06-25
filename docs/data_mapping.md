@@ -1,6 +1,8 @@
 # Data Mapping
 
-The operational data mapping layer translates heterogeneous local records into standardized features that the AI core and decision layer can consume.
+The Operational Data Mapping Layer translates heterogeneous local records into
+documented standardized concepts that multiple AI Core artifacts and decision
+configurations can consume.
 
 ## Supported Input Concepts
 
@@ -8,7 +10,7 @@ Example local sources include hotline logs, intake forms, referral records, outr
 
 ## Standard Indicator Groups
 
-The prototype currently maps the following indicators:
+The first implementation maps the following indicators:
 
 - `threats`
 - `abuse_indicators`
@@ -21,7 +23,14 @@ The prototype currently maps the following indicators:
 - `excessive_work_hours`
 - `withheld_documents`
 
-These indicators are then summarized into control, vulnerability, and relationship scores used by the configurable decision layer.
+These indicators can be selected and aggregated differently by each scenario. The
+mapping layer should expose standardized indicators and mapping metadata; the
+Configurable Decision Layer should decide how they contribute to a particular
+operational score.
+
+The CTDC exploitation-type module also uses age, gender, means-of-control, and
+recruiter-relationship fields according to its versioned feature contract. Future
+artifacts may require different standardized concepts.
 
 ## Mapping Documentation
 
@@ -33,4 +42,5 @@ Every local deployment should document:
 - Fields excluded from modeling or scoring.
 - Protected fields and how they are restricted.
 - Data-quality checks and known limitations.
-
+- Mapping version and compatible artifact versions.
+- Mapping coverage, confidence, and unresolved local fields.

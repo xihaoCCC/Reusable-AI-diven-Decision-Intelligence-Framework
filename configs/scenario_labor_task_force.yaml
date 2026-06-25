@@ -12,9 +12,8 @@ indicator_focus:
   - threats
   - close_recruiter_relationship
 priority_weights:
-  confidence: 0.20
-  target_probability: 0.35
-  control: 0.20
-  vulnerability: 0.15
-  relationship: 0.10
-
+  confidence: 0.15
+  target_probability: 0.40
+  control: 0.30
+  vulnerability: 0.10
+  relationship: 0.05
