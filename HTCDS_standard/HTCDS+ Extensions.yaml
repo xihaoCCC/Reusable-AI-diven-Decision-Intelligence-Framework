@@ -1,0 +1,157 @@
+schema_name: HTCDS+
+schema_version: 0.1.0
+base_schema:
+  name: HTCDS
+  source: HTCDS Field Standards 2.0.xlsx
+missing_value_policy:
+  unknown_representation: null
+  binary_explicit_negative: 0
+  binary_explicit_positive: 1
+  binary_unknown: null
+  categorical_unknown: null
+  numeric_default_imputation: mean
+fields:
+  - name: case.registration_year
+    label: Registration Year
+    field_type: Number
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [yearOfRegistration]
+    allowed_values: []
+    description: Year the individual was assisted, identified, referred, or reported.
+
+  - name: person.age_at_identification_broad
+    label: Age At Identification Broad
+    field_type: Picklist
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [ageBroad]
+    allowed_values: [0--8, 9--17, 18--20, 21--23, 24--26, 27--29, 30--38, 39--47, 48+]
+    description: Age band when assisted, identified, referred, or reported; distinct from age when trafficked.
+
+  - name: exploitation.country
+    label: Country Of Exploitation
+    field_type: Picklist
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [CountryOfExploitation]
+    allowed_values: [ISO 3166-1 alpha-3]
+    description: CTDC country-of-exploitation proxy.
+
+  - name: trafficking.duration_broad
+    label: Trafficking Duration Broad
+    field_type: Picklist
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [traffickMonths]
+    allowed_values: [0--12 (0-1 yr), 13--24 (1-2 yrs), 25+ (2+ yrs)]
+    description: Reported trafficking-duration band.
+
+  - name: control.debt_bondage_or_takes_earnings
+    label: Debt Bondage Or Takes Earnings
+    field_type: Binary
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [meansDebtBondageEarnings]
+    allowed_values: [0, 1]
+    description: Composite control indicator that cannot distinguish debt bondage from taken earnings.
+
+  - name: control.threats
+    label: Threats
+    field_type: Binary
+    source_category: curated_htcds_plus_group
+    source_datasets: [HTCDS, CTDC]
+    source_fields: [PhysicalThreats, ThreatsLawEnforcement, ThreatensChildrenFamily, meansThreats]
+    allowed_values: [0, 1]
+    description: Grouped threats concept; source-specific mapping may not identify the exact threat subtype.
+
+  - name: control.abuse
+    label: Abuse
+    field_type: Binary
+    source_category: curated_htcds_plus_group
+    source_datasets: [HTCDS, CTDC]
+    source_fields: [PhysicalAbuse, PsychologicalAbuse, SexualAbuse, meansAbusePsyPhySex]
+    allowed_values: [0, 1]
+    description: Grouped physical, psychological, or sexual abuse used as a method of control.
+
+  - name: control.false_promises
+    label: False Promises
+    field_type: Binary
+    source_category: derived_from_htcds
+    source_datasets: [HTCDS, CTDC]
+    source_fields: [FalsePromises, meansFalsePromises]
+    allowed_values: [0, 1]
+    description: False promises used as a method of control.
+
+  - name: control.psychoactive_substances
+    label: Psychoactive Substances
+    field_type: Binary
+    source_category: derived_from_htcds
+    source_datasets: [HTCDS, CTDC]
+    source_fields: [PsychoactiveSubstance, meansDrugsAlcohol]
+    allowed_values: [0, 1]
+    description: Psychoactive substances used as a method of control.
+
+  - name: control.restricted_needs
+    label: Restricted Needs And Access
+    field_type: Binary
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [meansDenyBasicNeeds]
+    allowed_values: [0, 1]
+    description: Composite restriction of finance, movement, medical care, or necessities.
+
+  - name: control.excessive_working_hours
+    label: Excessive Working Hours
+    field_type: Binary
+    source_category: derived_from_htcds
+    source_datasets: [HTCDS, CTDC]
+    source_fields: [ExcessiveWorkingHours, meansExcessiveWorkHours]
+    allowed_values: [0, 1]
+    description: Excessive working hours used as a method of control.
+
+  - name: control.withholds_documents
+    label: Withholds Documents
+    field_type: Binary
+    source_category: derived_from_htcds
+    source_datasets: [HTCDS, CTDC]
+    source_fields: [WithholdsDocuments, meansWithholdDocs]
+    allowed_values: [0, 1]
+    description: Withholding documents used as a method of control.
+
+  - name: recruiter.intimate_partner
+    label: Recruiter Is Intimate Partner
+    field_type: Binary
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [recruiterRelationIntimatePartner]
+    allowed_values: [0, 1]
+    description: Recruiter was a current or former intimate partner.
+
+  - name: recruiter.friend
+    label: Recruiter Is Friend
+    field_type: Binary
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [recruiterRelationFriend]
+    allowed_values: [0, 1]
+    description: Recruiter was identified as a friend.
+
+  - name: recruiter.family
+    label: Recruiter Is Family
+    field_type: Binary
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [recruiterRelationFamily]
+    allowed_values: [0, 1]
+    description: Recruiter had a familial relationship with the individual.
+
+  - name: recruiter.other
+    label: Recruiter Has Other Relationship
+    field_type: Binary
+    source_category: curated_from_ctdc
+    source_datasets: [CTDC]
+    source_fields: [recruiterRelationOther]
+    allowed_values: [0, 1]
+    description: Other recorded recruiter relationship not represented by the more specific fields.
+

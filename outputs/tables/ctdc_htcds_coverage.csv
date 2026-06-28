@@ -1,0 +1,28 @@
+ctdc_field,available,mapping_status,htcds_field,extension_field,modeling_role,notes
+yearOfRegistration,True,extension,,case.registration_year,filter,Operational registration year has no field in the cleaned standard.
+gender,True,covered,Gender,,feature,CTDC categories are translated to cleaned HTCDS values.
+ageBroad,True,extension,,person.age_at_identification_broad,feature,"Age is measured at identification/assistance, not when first trafficked."
+citizenship,True,covered,Citizenship,,available_not_selected,
+CountryOfExploitation,True,extension,,exploitation.country,filter,Useful location field absent from the cleaned standard.
+traffickMonths,True,extension,,trafficking.duration_broad,available_not_selected,Duration band has no field in the cleaned standard.
+meansDebtBondageEarnings,True,partial,MethodsOfControl,control.debt_bondage_or_takes_earnings,feature,Composite flag cannot distinguish debt bondage from taken earnings.
+meansThreats,True,partial,MethodsOfControl,control.threats,feature,"Composite flag merges threats, use of children, and law-enforcement threats."
+meansAbusePsyPhySex,True,partial,MethodsOfControl,control.abuse,feature,"Composite flag merges psychological, physical, and sexual abuse."
+meansFalsePromises,True,covered,MethodsOfControl,control.false_promises,feature,
+meansDrugsAlcohol,True,covered,MethodsOfControl,control.psychoactive_substances,feature,
+meansDenyBasicNeeds,True,partial,MethodsOfControl,control.restricted_needs,feature,"Composite flag merges finance, movement, medical care, and necessities."
+meansExcessiveWorkHours,True,covered,MethodsOfControl,control.excessive_working_hours,feature,
+meansWithholdDocs,True,covered,MethodsOfControl,control.withholds_documents,feature,
+isForcedLabour,True,covered,TypeOfExploitation,,target,
+isSexualExploit,True,covered,TypeOfExploitation,,target,
+isOtherExploit,True,covered,TypeOfExploitation,,target_filter,
+sectorOfLabourAgriculture,True,partial,ForcedLabourIndustry,,available_not_selected,CTDC agriculture is narrower than the combined HTCDS industry value.
+sectorOfLabourConstruction,True,covered,ForcedLabourIndustry,,available_not_selected,
+sectorOfLabourDomesticWork,True,covered,ForcedLabourIndustry,,available_not_selected,
+sectorOfLabourHospitality,True,covered,ForcedLabourIndustry,,available_not_selected,
+sectorOfSexProstitution,True,covered,TypeOfSexExploitation,,available_not_selected,
+sectorOfSexPornography,True,covered,TypeOfSexExploitation,,available_not_selected,
+recruiterRelationIntimatePartner,True,partial,RelationshipToTrafficker,recruiter.intimate_partner,feature,Specific CTDC relationship collapses to HTCDS Acquainted.
+recruiterRelationFriend,True,partial,RelationshipToTrafficker,recruiter.friend,feature,Specific CTDC relationship collapses to HTCDS Acquainted.
+recruiterRelationFamily,True,covered,RelationshipToTrafficker,recruiter.family,feature,
+recruiterRelationOther,True,partial,RelationshipToTrafficker,recruiter.other,feature,Other recruiter relationships cannot be represented precisely.

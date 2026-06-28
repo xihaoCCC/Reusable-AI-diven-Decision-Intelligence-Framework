@@ -16,8 +16,9 @@ technical implementation.
 
 ## 1. Operational Data Mapping Layer
 
-The mapping layer converts agency-owned records into documented standardized concepts
-while retaining useful local fields. Inputs may include hotline logs, intake forms,
+The mapping layer converts agency-owned records into HTCDS+, the project's documented
+bridge schema, while retaining source provenance. Inputs may include hotline logs,
+intake forms,
 referral records, outreach notes, case notes, service records, and public-safety
 records.
 
@@ -26,7 +27,7 @@ Responsibilities include:
 - local field normalization;
 - missingness policies and warnings;
 - local-to-standard concept mapping;
-- HTCDS-aligned mapping documentation;
+- official HTCDS and curated HTCDS+ mapping documentation;
 - data-quality and mapping-coverage checks;
 - protected-field restrictions; and
 - stable feature contracts for downstream artifacts.
@@ -87,4 +88,3 @@ and validate them against local needs before operational use.
 In **local-learning mode**, organizations with sufficient governed labels or reviewer
 feedback can recalibrate, fine-tune, retrain, or replace task modules while preserving
 the framework interfaces.
-

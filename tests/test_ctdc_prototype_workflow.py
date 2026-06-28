@@ -6,7 +6,14 @@ import unittest
 from sklearn.model_selection import train_test_split
 
 from src.ai_core import ExploitationTypeClassifier, ExploitationTypeClassifierConfig
-from src.data_mapping import CTDCMapper
+from src.data_mapping import (
+    CTDCHTCDSPlusMapper,
+    ModelFeatureConfig,
+    add_decision_support_features,
+    build_ctdc_exploitation_model_frame,
+    load_htcds_plus_schema,
+    load_htcds_schema,
+)
 from src.decision_layer import apply_triage_scenario, load_scenario
 from src.human_review import build_review_queue_table
 from src.utils import generate_ctdc_style_synthetic_records
@@ -18,16 +25,29 @@ ROOT = Path(__file__).resolve().parents[1]
 class CTDCPrototypeWorkflowTests(unittest.TestCase):
     def test_mapping_classifier_and_scenarios_run(self) -> None:
         records = generate_ctdc_style_synthetic_records(n_records=240, random_state=7)
-        mapped = CTDCMapper().map_records(records)
+        base_schema = load_htcds_schema(
+            ROOT / "HTCDS_standard" / "HTCDS Field Standards 2.0.xlsx"
+        )
+        schema = load_htcds_plus_schema(
+            base_schema, ROOT / "HTCDS_standard" / "HTCDS+ Extensions.yaml"
+        )
+        mapped = CTDCHTCDSPlusMapper(schema).map_records(records)
+        feature_config = ModelFeatureConfig.from_yaml(
+            ROOT / "configs" / "ctdc_exploitation_type_features.yaml"
+        )
+        model_frame = build_ctdc_exploitation_model_frame(mapped, feature_config)
+        model_frame = add_decision_support_features(model_frame)
         train_df, local_df = train_test_split(
-            mapped,
+            model_frame,
             test_size=80,
             random_state=7,
-            stratify=mapped["exploitation_type"],
+            stratify=model_frame["exploitation_type"],
         )
 
         classifier = ExploitationTypeClassifier(
-            ExploitationTypeClassifierConfig(model_type="logistic_regression")
+            ExploitationTypeClassifierConfig.from_feature_config(
+                feature_config, model_type="logistic_regression"
+            )
         ).fit(train_df)
         scored = classifier.score_records(local_df)
 

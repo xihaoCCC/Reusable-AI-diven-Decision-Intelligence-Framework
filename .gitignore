@@ -165,6 +165,7 @@ cython_debug/
 doc/
 .idea/
 .DS_Store
+~$*
 
 # Restricted or permission-unverified source data
 sample_data/ctdc_global_synthetic_data_v2026.csv

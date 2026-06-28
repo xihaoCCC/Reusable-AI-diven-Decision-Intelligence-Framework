@@ -94,3 +94,18 @@ Use download/setup instructions, local paths, or controlled artifact release mec
    monitoring, and local-learning support.
 5. Continue implementing all four framework layers beyond the initial prototype.
 
+## HTCDS+ Mapping Conventions
+
+HTCDS+ is the project's canonical bridge schema. The official foundation is stored at
+`HTCDS_standard/HTCDS Field Standards 2.0.xlsx`; curated fields and provenance are in
+`HTCDS_standard/HTCDS+ Extensions.yaml`. Keep official fields, project extensions,
+dataset raw fields, model features, and inference-time availability separate.
+
+Do not force a lossy source field into a more precise HTCDS value. Mark partial
+mappings and promote reusable extensions to source-neutral HTCDS+ names. Unknown
+binary values remain `NA`; zero is reserved for explicit negatives. The current CTDC
+mapping is documented in `docs/ctdc_htcds_mapping.md`.
+
+Do not label model features Core before training. Each released model variant must
+publish an importance-reviewed Core list, and inference data must cover all Core
+features.

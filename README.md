@@ -20,25 +20,29 @@ Outputs are review signals for trained human reviewers.
 
 ## Why This Framework Exists
 
-Frontline anti-trafficking organizations often hold useful hotline, intake, referral,
-outreach, case-note, service, and public-safety records, but may lack the staff,
-infrastructure, or labeled data needed to build operational AI systems from scratch.
+Frontline anti-trafficking organizations often hold valuable operational records,
+including hotline logs, intake forms, referrals, outreach notes, case notes,
+service records, and public-safety information. However, many of these organizations
+lack the data science staff, technical infrastructure, or labeled local data needed
+to build AI-enabled decision-support systems from scratch.
 
-The framework addresses this adoption gap by separating:
+This framework addresses that adoption gap by:
 
-- local data mapping from reusable technical components;
-- model outputs from organization-specific decision rules;
-- cold-start use of pre-trained artifacts from later local learning; and
-- AI suggestions from accountable human decisions.
+- **Mapping heterogeneous frontline records into usable decision-support features**: The framework helps convert locally defined and often incomplete records into standardized trafficking-related concepts through field normalization, missingness handling, data-quality checks, and operational data mapping.
+- **Providing a reusable AI Core that organizations do not need to build from scratch**: The framework supports reusable technical components, including classification modules, scoring logic, ranking tools, evaluation utilities, monitoring functions, and explanation outputs. This enables cold-start adoption with pre-trained or rule-informed modules and supports later local learning as more labels and reviewer feedback become available.
+- **Preserving local flexibility and human accountability**: The framework separates model outputs from organization-specific decision rules, allowing each organization to configure review capacity, confidence thresholds, priority weights, escalation rules, and referral pathways. AI-generated outputs are presented as suggestions and explanations for human review, not automated final decisions.
 
 ## Framework Architecture
 
 ### 1. Operational Data Mapping Layer
 
-Maps heterogeneous local records to documented, standardized trafficking-related
-concepts while preserving relevant local fields. Responsibilities include field
-normalization, missingness handling, local-to-standard concept mapping, HTCDS-aligned
-documentation, data-quality checks, and protected-field controls.
+Maps heterogeneous local records into **HTCDS+**, the project's canonical bridge
+schema. HTCDS+ retains official HTCDS fields and adds curated analytical concepts with
+documented types, values, provenance, and missing-value semantics.
+
+Dataset raw fields, HTCDS+ fields, model-specific features, and inference-time
+availability remain separate. See [docs/htcds_plus_schema.md](docs/htcds_plus_schema.md)
+and [docs/ctdc_htcds_mapping.md](docs/ctdc_htcds_mapping.md).
 
 ### 2. Standardized AI Core
 
@@ -56,6 +60,11 @@ Provides reusable components that organizations do not need to build independent
 The AI Core is intended to expand over time. Potential modules include
 exploitation-type suggestion, service-need prediction, urgency scoring, referral
 routing, text mining, and other responsibly developed anti-trafficking tasks.
+
+Each released model publishes its HTCDS+ version, complete feature list, missing-value
+policy, and an importance-reviewed top-K **Core** feature list. Local data must cover
+all Core features. Missing non-Core features may use the artifact's validated
+imputation policy.
 
 ### 3. Configurable Decision Layer
 
@@ -86,6 +95,20 @@ is still required before operational use.
 reviewer feedback to train, fine-tune, recalibrate, or replace modules using locally
 governed data and site-specific evaluation.
 
+## HTCDS+ And Missing Data
+
+HTCDS+ uses `NA` for not collected, not applicable, unknown, or not reported.
+
+- Binary `0` means explicitly negative; unknown remains `NA`.
+- Categorical unknown remains `NA`.
+- Numeric unknown remains `NA` until model preprocessing.
+- The current default numeric strategy is training-set mean imputation with
+  missingness indicators; each released artifact may document another validated
+  strategy.
+
+The current analytical schema groups physical, psychological, and sexual abuse under
+`control.abuse`. Official HTCDS definitions remain unchanged in the base standard.
+
 ## First AI Core Module: CTDC Exploitation-Type Classification
 
 The first implemented task module is informed by the CTDC Global Synthetic Dataset
@@ -108,6 +131,11 @@ implementation. The next development phase will rebuild the training pipeline,
 strengthen validation and calibration, and publish a versioned artifact bundle with
 preprocessing objects, feature schemas, model cards, evaluation reports, and loading
 APIs.
+
+We expect to train multiple compatible variants, including full- and reduced-feature
+models. Core features will be assigned only after training, feature-importance and
+stability analysis, leakage review, and domain review. The current Core list is
+therefore marked `pending_model_training`.
 
 Age and gender are retained as candidate model features. Their contribution and risks
 must be evaluated through ablation, subgroup analysis, documentation, and governance
@@ -154,6 +182,8 @@ reproduction case, not the repository's complete scope.
 ```text
 .
 ├── configs/                 # Organization/scenario decision configuration
+├── HTCDS_standard/          # Cleaned field standard and control definitions
+│   └── HTCDS+ Extensions.yaml # Curated analytical fields and provenance
 ├── docs/                    # Architecture, governance, artifact, and roadmap docs
 ├── examples/                # Runnable end-to-end examples
 ├── notebooks/               # Public reproduction and demonstration notebooks

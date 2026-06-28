@@ -39,3 +39,28 @@ Alignment:
   confirmed.
 - Clarified that age and gender may be modeled only with explicit disclosure,
   sensitive-feature evaluation, governance, and local validation.
+
+## HTCDS Mapping Layer
+
+- Added a reusable loader for the cleaned 20-field HTCDS Excel standard.
+- Added an explicit CTDC-to-HTCDS mapping specification and coverage report.
+- Classified CTDC fields as covered, partial, or source-specific extensions.
+- Preserved lossy CTDC composite-control and recruiter signals as explicit extensions
+  instead of expanding them into unsupported precise HTCDS values.
+- Added a separate YAML configuration for the 19 features selected by the current
+  exploitation-type classification task.
+- Updated the public-safe synthetic pipeline to exercise raw CTDC-shaped input,
+  standardized mapping, model feature selection, classification, and triage end to end.
+
+## HTCDS+ Bridge Schema
+
+- Named the project bridge schema HTCDS+ and added a central extension/provenance
+  registry.
+- Replaced CTDC-prefixed reusable fields with source-neutral HTCDS+ names.
+- Grouped physical, psychological, and sexual control abuse as `control.abuse` while
+  retaining official HTCDS definitions in the base schema.
+- Preserved unknown binary and categorical values as `NA`; zero now requires an
+  explicit negative.
+- Added configurable mean numeric imputation with missingness indicators.
+- Added model compatibility and Core-feature metadata. The current Core list remains
+  pending until the improved model is trained and reviewed.

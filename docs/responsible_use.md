@@ -35,6 +35,11 @@ calibration, subgroup behavior, and operational error costs. Artifact metadata s
 identify the training source, task, labels, features, evaluation, intended uses, and
 known limitations.
 
+Local data must cover an artifact's published Core features. Unknown binary values
+must not be converted to negative values merely to satisfy compatibility. Imputation
+is permitted only for non-Core fields under the artifact's documented and validated
+policy.
+
 ## Misuse Boundaries
 
 The CTDC-informed experiment should not be represented as proof of real-world

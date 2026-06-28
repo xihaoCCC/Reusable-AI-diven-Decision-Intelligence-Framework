@@ -43,8 +43,9 @@ Convert the publication notebook into modular, testable training code in
 - Retain age and gender as candidate model features.
 - Encode gender without artificial order and represent missing/unknown values.
 - Encode age brackets with explicit missingness and minor/young indicators.
-- Document the assumption used when missing binary control indicators are mapped to
-  zero, and test alternatives.
+- Preserve unknown binary controls as `NA`; reserve zero for explicit negatives.
+- Compare mean, median, most-frequent, and model-native missing-value handling while
+  keeping mean imputation as the initial numeric default.
 - Keep an ordered feature contract that inference must validate.
 
 ### Baselines And Candidate Models
@@ -95,6 +96,11 @@ Robustness:
 Model selection should not optimize only aggregate accuracy. Selection should consider
 mixed-exploitation performance, calibrated probabilities, stability, interpretability,
 runtime, artifact size, and downstream triage behavior.
+
+For each selected full- or reduced-feature variant, use feature-importance and
+stability analysis to propose a top-K Core set. Review Core candidates for leakage,
+sensitive-attribute implications, calibration impact, and domain plausibility before
+publishing them in the model README.
 
 ## Phase 3: Validate Priority Scoring And Triage
 
@@ -247,4 +253,3 @@ Human Review And Presentation:
 7. Tune candidate models and define model-selection criteria.
 8. Create a candidate artifact bundle and exercise the public inference API.
 9. Review documentation, governance, and distribution before release.
-

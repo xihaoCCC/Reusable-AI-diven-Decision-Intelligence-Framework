@@ -4,6 +4,7 @@ scipy
 scikit-learn
 matplotlib
 pyyaml
+openpyxl
 
 # Optional: used when available for the paper's primary exploitation-type task module.
 # The prototype falls back to scikit-learn HistGradientBoostingClassifier if absent.
