@@ -46,14 +46,15 @@ Age at identification is deliberately distinct from official `AgeWhenTrafficked`
 
 ## Current Model Contract
 
-The current configuration selects 19 numeric features: encoded gender and age
-features, eight control indicators, and four recruiter indicators. It uses mean
-imputation for numeric values, most-frequent imputation for binary values, and
-missingness indicators for both groups.
+The current configuration selects 19 features: one ordinal age feature and 18 binary
+gender, age, control, and recruiter indicators. XGBoost receives their `NaN` values
+directly. Logistic regression mean-imputes the numeric age input with a missingness
+indicator and treats each binary input as a nominal `No`, `Yes`, or `Unknown` state,
+using `No` as the dummy-variable reference.
 
-The future release artifact will identify its top-K importance-reviewed Core features.
-Until that model is trained, the Core list is explicitly marked
-`pending_model_training` rather than guessed.
+The v3 candidate bundle proposes a top-K list from validation-period permutation
+importance. The public feature contract remains `candidate_pending_review` until
+stability, leakage, sensitive-feature, and domain review define the final Core list.
 
 ## Coverage Command
 

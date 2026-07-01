@@ -100,11 +100,11 @@ reported as `NA`.
 - Binary `NA` means unknown.
 - Categorical unknown values remain `NA`.
 - Numeric unknown values remain `NA` in the canonical dataset.
-- A model may impute numeric values according to its versioned feature specification;
-  the current default is training-set mean imputation with missingness indicators.
-- Binary values remain `NA` through mapping. The current demonstration uses
-  most-frequent imputation plus missingness indicators at model preprocessing time;
-  released artifacts must validate and document their binary policy.
+- A model handles numeric values according to its versioned specification. XGBoost
+  currently uses native `NaN`; logistic regression uses training-set mean imputation
+  with missingness indicators for numeric inputs.
+- Binary values remain `NA` through mapping. Logistic regression treats them as a
+  nominal `Unknown` state alongside `No` and `Yes`; XGBoost receives `NaN` directly.
 
 Canonical mapping never replaces an unknown binary value with zero.
 

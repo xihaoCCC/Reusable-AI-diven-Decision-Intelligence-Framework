@@ -1,0 +1,5 @@
+-r requirements.txt
+xgboost==1.7.0
+joblib==1.2.0
+nbformat>=5.7
+jupyter>=1.0

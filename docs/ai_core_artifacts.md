@@ -71,8 +71,31 @@ Its bundle should include the primary model, transparent baseline, fitted
 preprocessing, label encoding, ordered feature schema, model card, training
 configuration, metrics, threshold analysis, provenance, and checksums.
 
-The initial feature configuration marks Core features as `pending_model_training`.
-They will be populated only after the improved training and importance review.
+The feature configuration marks Core features as `candidate_pending_review`. The v3
+run proposes candidates, but the released contract will be populated only after
+importance stability and governance review.
+
+## V3 Candidate-Training Workflow
+
+The current reusable implementation lives in `src/ai_core/exploitation_type/` and is
+orchestrated by `examples/train_ctdc_exploitation_type_candidate.py`. It provides:
+
+- CTDC-to-HTCDS+ preparation and data-quality auditing;
+- temporal train, validation, and held-out test partitions;
+- a fitted missing-value preprocessing contract;
+- balanced logistic-regression and XGBoost candidates;
+- sigmoid calibration on the validation period;
+- aggregate, per-class, probability-quality, confusion-matrix, and threshold metrics;
+- side-by-side calibrated and uncalibrated held-out outputs so probability improvements
+  and class-decision tradeoffs remain visible;
+- validation-period permutation importance and proposed, not final, Core features;
+- data fingerprints, runtime metadata, checksums, and reloadable model files; and
+- an inference loader that refuses non-released artifacts unless candidate review is
+  explicitly enabled.
+
+The local v3 notebook calls these modules so intermediate results remain inspectable
+without making notebook state part of the production interface. Candidate artifacts
+remain in `Local_runner/` until all promotion gates are satisfied.
 
 ## Inference Compatibility
 
@@ -85,9 +108,10 @@ Compatibility should be reported as:
 
 Unknown is not equivalent to negative. Binary unknowns remain `NA`; categorical
 unknowns remain `NA`; and numeric unknowns remain `NA` until model preprocessing. The
-default numeric policy is training-set mean imputation with a missingness indicator.
-The current demonstration uses most-frequent binary imputation with a missingness
-indicator, but every released artifact must validate and document both strategies.
+current XGBoost candidate uses native `NaN` handling. The logistic baseline uses
+training-set mean imputation with a missingness indicator for numeric inputs and
+three-state nominal binary encoding with `No` as the reference and separate `Yes` and
+`Unknown` dummy variables.
 
 Age and gender are candidate features in this module. The artifact must declare them
 explicitly, report ablation and subgroup analyses, and warn downstream users that

@@ -36,9 +36,10 @@ Canonical mapping preserves unknown values as `NA`:
 - categorical and numeric unknowns remain `NA`.
 
 Imputation belongs to a versioned model feature contract, not the mapping layer. The
-current classification configuration uses mean numeric imputation, most-frequent binary
-imputation, and missingness indicators. These are demonstration defaults that must be
-validated for the released artifact.
+current XGBoost configuration keeps `NaN` for native missing-value handling. The
+logistic baseline mean-imputes numeric inputs with missingness indicators and encodes
+binary inputs as nominal `No`, `Yes`, or `Unknown` states, with `No` as the reference.
+The canonical HTCDS+ data remain `NA` in both cases.
 
 ## Model Feature Selection
 

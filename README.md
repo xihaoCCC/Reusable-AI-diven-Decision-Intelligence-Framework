@@ -101,10 +101,13 @@ HTCDS+ uses `NA` for not collected, not applicable, unknown, or not reported.
 
 - Binary `0` means explicitly negative; unknown remains `NA`.
 - Categorical unknown remains `NA`.
-- Numeric unknown remains `NA` until model preprocessing.
-- The current default numeric strategy is training-set mean imputation with
-  missingness indicators; each released artifact may document another validated
-  strategy.
+- Numeric unknown remains `NA` until model-specific preprocessing.
+- XGBoost receives `NaN` directly and learns default missing-value branches.
+- Logistic regression treats each binary input as a nominal `No`, `Yes`, or `Unknown`
+  state. `No` is the reference state; separate `Yes` and `Unknown` dummy variables
+  avoid imposing an ordinal relationship.
+- Logistic numeric inputs currently use training-set mean imputation with missingness
+  indicators.
 
 The current analytical schema groups physical, psychological, and sexual abuse under
 `control.abuse`. Official HTCDS definitions remain unchanged in the base standard.
@@ -126,16 +129,30 @@ Its interface produces:
 - `confidence = max(P(Sex), P(Labor), P(Both))`
 
 The published prototype used multinomial logistic regression as a transparent baseline
-and XGBoost as the primary pre-trained module. The current repository code is an early
-implementation. The next development phase will rebuild the training pipeline,
-strengthen validation and calibration, and publish a versioned artifact bundle with
-preprocessing objects, feature schemas, model cards, evaluation reports, and loading
-APIs.
+and XGBoost as the primary pre-trained module. The v3 candidate-training workflow now
+maps CTDC records into HTCDS+, uses a temporal train/validation/test split, applies
+class weighting, compares logistic-regression and XGBoost candidates, calibrates soft
+probabilities, and exports a reloadable candidate bundle with preprocessing, label,
+configuration, evaluation, provenance, and checksum files.
+
+Run the reusable trainer with locally obtained CTDC data:
+
+```bash
+pip install -r requirements-training.txt
+python examples/train_ctdc_exploitation_type_candidate.py \
+  --data /path/to/ctdc_global_synthetic_data_v2026.csv \
+  --output /path/to/Local_runner/artifacts/ctdc_exploitation_type/v3_candidate
+```
+
+The exploratory `trafficking_type_classification_v3.ipynb` remains in the local
+training workspace. The public AI Core uses the reusable modules under
+`src/ai_core/exploitation_type/`, never the notebook itself. Candidate bundles are not
+released artifacts and must remain outside the public repository until reviewed.
 
 We expect to train multiple compatible variants, including full- and reduced-feature
 models. Core features will be assigned only after training, feature-importance and
 stability analysis, leakage review, and domain review. The current Core list is
-therefore marked `pending_model_training`.
+therefore marked `candidate_pending_review`.
 
 Age and gender are retained as candidate model features. Their contribution and risks
 must be evaluated through ablation, subgroup analysis, documentation, and governance
@@ -213,9 +230,9 @@ pip install -r requirements.txt
 python examples/run_ctdc_exploitation_type_prototype.py
 ```
 
-The current example produces two sample review queues under
+The current demonstration produces two sample review queues under
 `outputs/sample_review_queues/`. It demonstrates the framework interface but should
-not be confused with the forthcoming release-quality CTDC artifact.
+not be confused with an approved CTDC artifact.
 
 ## Data Availability
 

@@ -26,9 +26,6 @@ class ModelFeatureConfig:
     label_field: str
     numeric_features: tuple[str, ...] = ()
     binary_features: tuple[str, ...] = ()
-    numeric_imputation_strategy: str = "mean"
-    binary_imputation_strategy: str = "most_frequent"
-    add_missing_indicators: bool = True
     core_feature_status: str = "pending_model_training"
     core_feature_selection_method: str = "top_k_feature_importance"
     core_feature_top_k: int = 0
@@ -44,13 +41,6 @@ class ModelFeatureConfig:
             label_field=str(payload["label_field"]),
             numeric_features=tuple(payload.get("numeric_features", [])),
             binary_features=tuple(payload.get("binary_features", [])),
-            numeric_imputation_strategy=str(
-                payload.get("numeric_imputation_strategy", "mean")
-            ),
-            binary_imputation_strategy=str(
-                payload.get("binary_imputation_strategy", "most_frequent")
-            ),
-            add_missing_indicators=bool(payload.get("add_missing_indicators", True)),
             core_feature_status=str(
                 core_policy.get("status", "pending_model_training")
             ),
@@ -95,14 +85,6 @@ class ModelFeatureConfig:
         invalid_core = sorted(set(self.core_features) - set(self.model_features))
         if invalid_core:
             raise ValueError(f"Core features are not model features: {invalid_core}")
-        if self.numeric_imputation_strategy not in {"mean", "median", "most_frequent"}:
-            raise ValueError(
-                "numeric_imputation_strategy must be mean, median, or most_frequent"
-            )
-        if self.binary_imputation_strategy not in {"most_frequent", "mean"}:
-            raise ValueError(
-                "binary_imputation_strategy must be most_frequent or mean"
-            )
         if self.core_features and self.core_feature_status != "defined":
             raise ValueError("core_feature_status must be 'defined' when features are listed")
 

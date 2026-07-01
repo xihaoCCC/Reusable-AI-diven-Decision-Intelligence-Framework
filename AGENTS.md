@@ -87,12 +87,19 @@ Use download/setup instructions, local paths, or controlled artifact release mec
 
 ## Current Priorities
 
-1. Rebuild and validate the CTDC exploitation-type training pipeline.
-2. Produce a strong, reproducible, versioned pre-trained artifact bundle.
-3. Add artifact loading/inference APIs and model-card documentation.
-4. Expand evaluation, threshold analysis, interpretability, sensitive-feature auditing,
-   monitoring, and local-learning support.
-5. Continue implementing all four framework layers beyond the initial prototype.
+The v3 candidate foundation now includes HTCDS+ preparation, temporal validation,
+weighted logistic/XGBoost training, calibration, evaluation, candidate serialization,
+and artifact reload inference. The working notebook and candidate binaries remain in
+`Local_runner/`.
+
+1. Improve and stress-test minority `Both` performance, especially the calibrated
+   argmax recall tradeoff.
+2. Add repeated-seed, ablation, subgroup, missingness, and classwise calibration
+   analyses.
+3. Evaluate full and reduced feature variants and Core-feature stability.
+4. Define acceptance criteria and complete model-card and governance review.
+5. Promote a versioned artifact only after CTDC distribution terms are confirmed.
+6. Continue implementing all four framework layers beyond the initial prototype.
 
 ## HTCDS+ Mapping Conventions
 
@@ -105,6 +112,10 @@ Do not force a lossy source field into a more precise HTCDS value. Mark partial
 mappings and promote reusable extensions to source-neutral HTCDS+ names. Unknown
 binary values remain `NA`; zero is reserved for explicit negatives. The current CTDC
 mapping is documented in `docs/ctdc_htcds_mapping.md`.
+
+Model preprocessing is task- and estimator-specific. The CTDC XGBoost candidate keeps
+`NaN` for native missing-value handling. Its logistic baseline encodes binary fields as
+nominal `No`, `Yes`, and `Unknown` states, using `No` as the reference category.
 
 Do not label model features Core before training. Each released model variant must
 publish an importance-reviewed Core list, and inference data must cover all Core

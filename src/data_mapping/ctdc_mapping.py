@@ -142,6 +142,8 @@ class CTDCHTCDSPlusMapper:
             source = records.get(source_field, pd.Series(pd.NA, index=records.index))
             if source_field.startswith(("means", "recruiterRelation")):
                 mapped[extension_field] = _binary(source)
+            elif source_field == "ageBroad":
+                mapped[extension_field] = source.replace({"09--17": "9--17"})
             else:
                 mapped[extension_field] = source
 

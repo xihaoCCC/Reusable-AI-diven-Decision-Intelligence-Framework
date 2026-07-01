@@ -244,12 +244,22 @@ Human Review And Presentation:
 
 ## Immediate Next Sprint
 
-1. Scaffold `Local_runner/ctdc_exploitation_type/`.
-2. Move the publication notebook there as a read-only reference copy.
-3. Implement reproducible data preparation and feature-building modules.
-4. Add dataset fingerprinting and training configuration.
-5. Reproduce the paper metrics exactly before changing model logic.
-6. Add improved cross-validation, calibration, subgroup, and robustness evaluation.
-7. Tune candidate models and define model-selection criteria.
-8. Create a candidate artifact bundle and exercise the public inference API.
-9. Review documentation, governance, and distribution before release.
+Completed foundation:
+
+- implemented reproducible HTCDS+ preparation and model feature building;
+- added source-data fingerprinting and versioned training configuration;
+- added temporal holdout, weighted logistic/XGBoost candidates, calibration, and
+  evaluation outputs;
+- added candidate artifact serialization and inference reload checks; and
+- created the v3 local experimentation notebook around reusable AI Core modules.
+
+Next review cycle:
+
+1. Reconcile v2 reproduction metrics with v3 changes and document intentional deltas.
+2. Review temporal-split suitability and run repeated-seed and cross-validation checks.
+3. Improve `Both` recall without using the old outcome-conditioned quality filter.
+4. Add age/gender ablation, subgroup, and missingness analyses.
+5. Compare calibration methods and inspect classwise reliability.
+6. Test full and reduced feature variants and Core-feature stability.
+7. Define acceptance criteria, complete the model card, and review governance.
+8. Confirm CTDC artifact redistribution terms before public promotion.

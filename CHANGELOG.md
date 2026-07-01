@@ -1,5 +1,21 @@
 # Changelog
 
+## V3 CTDC Candidate Training
+
+- Added a reusable HTCDS+-based exploitation-type training package under
+  `src/ai_core/exploitation_type/`.
+- Added temporal validation, class weighting, logistic and XGBoost comparison,
+  probability calibration, per-class metrics, threshold analysis, and permutation
+  importance.
+- Added candidate artifact packaging with preprocessing, label encoding, provenance,
+  evaluation files, checksums, and an inference loader.
+- Added a separate training dependency file and configuration-driven v3 trainer.
+- Split preprocessing by estimator: XGBoost now uses native `NaN` handling, while
+  logistic regression uses nominal `No`/`Yes`/`Unknown` binary states with `No` as the
+  reference category.
+- Kept raw CTDC data, exploratory notebook state, and candidate binary artifacts in
+  `Local_runner/` pending review and distribution approval.
+
 ## Current Refocus
 
 Removed or archived:

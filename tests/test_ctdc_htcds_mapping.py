@@ -110,8 +110,7 @@ class CTDCHTCDSMappingTests(unittest.TestCase):
         )
         self.assertNotIn("Citizenship", model_frame.columns)
         self.assertFalse(model_frame["exploitation_type"].isna().any())
-        self.assertEqual(feature_config.numeric_imputation_strategy, "mean")
-        self.assertEqual(feature_config.core_feature_status, "pending_model_training")
+        self.assertEqual(feature_config.core_feature_status, "candidate_pending_review")
         self.assertEqual(
             feature_config.assess_inference_compatibility(model_frame).status,
             "core_features_pending",
@@ -126,6 +125,15 @@ class CTDCHTCDSMappingTests(unittest.TestCase):
         self.assertTrue(pd.isna(mapped.loc[0, "control.false_promises"]))
         self.assertTrue(pd.isna(mapped.loc[0, "recruiter.friend"]))
         self.assertTrue(pd.isna(mapped.loc[0, "Gender"]))
+
+    def test_ctdc_age_band_is_normalized_to_htcds_plus_value(self) -> None:
+        mapped = self.mapper.map_records(
+            pd.DataFrame([{"case_id": "age-1", "ageBroad": "09--17"}])
+        )
+
+        self.assertEqual(
+            mapped.loc[0, "person.age_at_identification_broad"], "9--17"
+        )
 
     def test_defined_core_features_are_required_for_compatibility(self) -> None:
         config = ModelFeatureConfig(
