@@ -55,9 +55,9 @@ metadata()
 Task modules may extend this contract, but they should not bypass schema validation or
 artifact metadata.
 
-## CTDC Exploitation-Type Artifact
+## Included CTDC Exploitation-Type Artifact
 
-The first planned release artifact predicts `Sex`, `Labor`, and `Both` exploitation
+The first packaged research release predicts `Sex`, `Labor`, and `Both` exploitation
 types and returns:
 
 - `P(Sex)`
@@ -67,9 +67,12 @@ types and returns:
 - confidence
 - explanation-ready feature information
 
-Its bundle should include the primary model, transparent baseline, fitted
-preprocessing, label encoding, ordered feature schema, model card, training
-configuration, metrics, threshold analysis, provenance, and checksums.
+The minimal inference bundle is stored under
+`src/ai_core/artifacts/exploitation_type/ctdc_xgboost/v0.1.0/`. It includes the
+calibrated model pipeline, label encoding, ordered feature schema, manifest, exact
+runtime requirements, checksums, and model documentation. Alternate models, plots,
+feature-importance outputs, threshold analyses, and exploratory results remain in
+`Local_runner/` rather than the AI Core release directory.
 
 The feature configuration marks Core features as `candidate_pending_review`. The v3
 run proposes candidates, but the released contract will be populated only after
@@ -108,10 +111,10 @@ Compatibility should be reported as:
 
 Unknown is not equivalent to negative. Binary unknowns remain `NA`; categorical
 unknowns remain `NA`; and numeric unknowns remain `NA` until model preprocessing. The
-current XGBoost candidate uses native `NaN` handling. The logistic baseline uses
-training-set mean imputation with a missingness indicator for numeric inputs and
-three-state nominal binary encoding with `No` as the reference and separate `Yes` and
-`Unknown` dummy variables.
+packaged XGBoost research release uses native `NaN` handling. The training workflow's
+logistic baseline uses training-set mean imputation with a missingness indicator for
+numeric inputs and three-state nominal binary encoding with `No` as the reference and
+separate `Yes` and `Unknown` dummy variables.
 
 Age and gender are candidate features in this module. The artifact must declare them
 explicitly, report ablation and subgroup analyses, and warn downstream users that
@@ -138,5 +141,6 @@ policy visible and reviewable.
 ## Promotion From Local Development
 
 Raw data, exploratory notebooks, tuning runs, and candidate models remain in
-`Local_runner/`. A candidate is promoted only after it passes the release gates in
-[ROADMAP.md](../ROADMAP.md).
+`Local_runner/`. A packaged research release may be reusable before field validation,
+but its manifest and model card must preserve that distinction. Operational promotion
+still requires the gates in [ROADMAP.md](../ROADMAP.md).

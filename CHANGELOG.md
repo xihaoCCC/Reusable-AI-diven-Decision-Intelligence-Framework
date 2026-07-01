@@ -15,6 +15,8 @@
   reference category.
 - Kept raw CTDC data, exploratory notebook state, and candidate binary artifacts in
   `Local_runner/` pending review and distribution approval.
+- Added the calibrated CTDC-informed XGBoost pipeline to the AI Core as a minimal,
+  versioned research release with a manifest, runtime lock, checksums, and model card.
 
 ## Current Refocus
 

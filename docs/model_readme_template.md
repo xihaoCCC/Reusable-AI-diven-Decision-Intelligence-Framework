@@ -1,42 +1,93 @@
-# Model Name And Version
+# Model Card: Model Name
 
-## Task
+Use this structure for every versioned model artifact added to the Standardized AI
+Core. Keep the version directory minimal and place exploratory outputs in
+`Local_runner/`.
 
-Describe the prediction task, output classes, intended users, and HTCDS+ schema
-version.
+## Model Details
+
+- **Artifact ID:** Stable machine-readable identifier
+- **Version:** Semantic version
+- **Status:** Research release, validated release, or deprecated
+- **Model:** Algorithm and calibration method
+- **Framework schema:** Compatible HTCDS+ version
+- **Task:** Specific prediction or scoring task
+
+List every output field and define its meaning.
+
+## Intended Use
+
+Describe intended users, supported decision-support workflows, and required human
+review. State clearly that model outputs are review signals rather than final
+determinations.
 
 ## Training Data
 
-Document source datasets, date/version, filters, fingerprints, population, and known
-limitations without redistributing restricted data.
+Document source datasets, versions, filters, population, date range, class
+distribution, and source fingerprints without redistributing restricted data.
 
-## Feature Contract
-
-List all model features, types, transformations, and missing-value policies.
-
-## Core Features
+## Input Contract
 
 Document:
 
-- final Core feature list;
-- top-K value;
-- importance method or methods;
-- cross-validation or resampling stability;
-- leakage and sensitive-feature review; and
-- domain-review rationale.
+- ordered features and types;
+- mappings to HTCDS+ concepts;
+- fitted transformations;
+- missing-value behavior;
+- final Core features and optional features; and
+- compatibility behavior when fields are absent.
 
-Local inference data must cover every Core feature.
+Unknown is not equivalent to an explicit negative.
 
-## Non-Core Missing Features
+## Evaluation Summary
 
-Describe permitted imputation strategies and the compatibility threshold. Unknown
-binary and categorical values remain `NA`; zero is never a substitute for unknown.
+Report held-out and cross-validation results appropriate to the task, including:
 
-## Evaluation
+- aggregate and per-class metrics;
+- probability and calibration metrics;
+- subgroup and missingness analyses;
+- temporal or distribution-shift checks; and
+- downstream decision-support metrics where available.
 
-Report predictive, calibration, subgroup, robustness, and downstream triage metrics.
+Identify the evaluation population and avoid presenting synthetic-data results as
+field validation.
 
-## Intended And Prohibited Uses
+## Limitations
 
-State appropriate decision-support uses, human-review requirements, and prohibited
-automated decisions.
+Document class imbalance, weak classes or subgroups, calibration limitations,
+distribution shift, sensitive features, unresolved Core-feature review, and other
+known failure modes.
+
+## Prohibited Uses
+
+List autonomous, punitive, surveillance, profiling, or unsupported decision contexts
+for which the artifact must not be used.
+
+## Human Review And Governance
+
+State reviewer authority, local-validation requirements, privacy controls, access
+restrictions, audit logging, monitoring, escalation, and appeal expectations.
+
+## Runtime And Serialization
+
+Record the supported Python and package versions. Explain how to install the runtime,
+verify checksums, and load the model. Warn users never to deserialize untrusted model
+files.
+
+## Required Version Directory
+
+```text
+<version>/
+├── model.joblib
+├── label_encoder.joblib       # When class-index decoding is external to the model
+├── feature_config.yaml
+├── artifact_manifest.json
+├── requirements.txt
+├── checksums.sha256
+├── README.md
+└── MODEL_CARD.md
+```
+
+Omit files that are genuinely unnecessary for a specific artifact, but do not omit
+the manifest, feature contract, runtime specification, integrity verification, or
+model documentation.

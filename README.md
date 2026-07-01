@@ -209,6 +209,7 @@ reproduction case, not the repository's complete scope.
 ├── src/
 │   ├── data_mapping/        # Operational Data Mapping Layer
 │   ├── ai_core/             # Reusable models, scoring, evaluation, explanations
+│   │   └── artifacts/       # Minimal versioned inference bundles and model cards
 │   ├── decision_layer/      # Configurable triage and routing
 │   ├── human_review/        # Review-queue and feedback interfaces
 │   ├── evaluation/          # Predictive and operational evaluation
@@ -231,8 +232,13 @@ python examples/run_ctdc_exploitation_type_prototype.py
 ```
 
 The current demonstration produces two sample review queues under
-`outputs/sample_review_queues/`. It demonstrates the framework interface but should
-not be confused with an approved CTDC artifact.
+`outputs/sample_review_queues/`. Its locally trained fallback demonstrates the
+framework interface and is separate from the packaged AI Core research release.
+
+The AI Core now includes a packaged CTDC-informed exploitation-type research release.
+See [src/ai_core/README.md](src/ai_core/README.md) for the artifact registry and model
+documentation. Research release status does not imply field validation or operational
+approval.
 
 ## Data Availability
 
